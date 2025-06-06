@@ -1,11 +1,12 @@
 import React from "react";
+import styles from "./Footer.module.css";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-gray-800 text-gray-400">
-      <div className="container mx-auto px-6 py-6 text-center">
+    <footer className={styles.footer}>
+      <div className={styles.container}>
         <p>&copy; {currentYear} YourCreativeDev. Всі права захищено.</p>
       </div>
     </footer>

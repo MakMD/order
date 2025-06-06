@@ -2,18 +2,17 @@ import React from "react";
 import { Outlet } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import styles from "./MainLayout.module.css";
 
 const MainLayout = () => {
   return (
-    <div className="bg-gray-50 text-gray-800">
+    <>
       <Header />
-      <main className="pt-20">
-        {" "}
-        {/* Додаємо відступ зверху, оскільки хедер фіксований */}
+      <main className={styles.mainContent}>
         <Outlet />
       </main>
       <Footer />
-    </div>
+    </>
   );
 };
 

@@ -10,11 +10,11 @@ body {
   color: #1f2937; /* text-gray-800 */
 }
 
-/* Глобальний контейнер для центрування контенту */
-.container {
-  max-width: 1280px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 1.5rem; /* 24px */
-  padding-right: 1.5rem; /* 24px */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
 }

@@ -1,0 +1,11 @@
+.footer {
+  background-color: #1f2937; /* bg-gray-800 */
+  color: #9ca3af; /* text-gray-400 */
+}
+
+.container {
+  max-width: 1280px;
+  margin: auto;
+  padding: 1.5rem;
+  text-align: center;
+}

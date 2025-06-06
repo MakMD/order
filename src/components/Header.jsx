@@ -5,7 +5,6 @@ import Button from "./UI/Button/Button";
 
 const Header = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
-
   const closeMenu = () => setMobileMenuOpen(false);
 
   const navLinks = [
@@ -16,13 +15,12 @@ const Header = () => {
 
   return (
     <header className={styles.header}>
-      <div className={`container ${styles.navContainer}`}>
+      <div className={styles.container}>
         <nav className={styles.nav}>
           <Link to="/" className={styles.logo} onClick={closeMenu}>
             YourCreativeDev
           </Link>
 
-          {/* Desktop Menu */}
           <div className={styles.desktopNav}>
             {navLinks.map((link) => (
               <NavLink
@@ -40,14 +38,12 @@ const Header = () => {
             </Link>
           </div>
 
-          {/* Mobile Menu Button */}
           <div className={styles.mobileMenuButtonContainer}>
             <button
               onClick={() => setMobileMenuOpen(!isMobileMenuOpen)}
               className={styles.mobileMenuButton}
               aria-label="Toggle menu"
             >
-              {/* Іконка-бургер */}
               <svg className={styles.burgerIcon} viewBox="0 0 24 24">
                 <path d="M4 6h16M4 12h16m-7 6h7"></path>
               </svg>
@@ -55,7 +51,6 @@ const Header = () => {
           </div>
         </nav>
 
-        {/* Mobile Menu */}
         {isMobileMenuOpen && (
           <div className={styles.mobileMenu}>
             {navLinks.map((link) => (
@@ -70,7 +65,11 @@ const Header = () => {
                 {link.text}
               </NavLink>
             ))}
-            <Link to="/contact" onClick={closeMenu}>
+            <Link
+              to="/contact"
+              onClick={closeMenu}
+              className={styles.mobileMenuContactLink}
+            >
               <Button>Замовити</Button>
             </Link>
           </div>

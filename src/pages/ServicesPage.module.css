@@ -1,0 +1,78 @@
+.pageWrapper {
+  background-color: #f9fafb; /* bg-gray-50 */
+}
+
+.section {
+  padding: 4rem 0;
+}
+
+.container {
+  max-width: 1280px;
+  margin: auto;
+  padding: 0 1.5rem;
+}
+
+.sectionHeading {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.pageTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+@media (min-width: 768px) {
+  .pageTitle {
+    font-size: 3rem;
+  }
+}
+
+.pageSubtitle {
+  color: #4b5563;
+  margin-top: 1rem;
+  max-width: 42rem;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.125rem;
+  line-height: 1.75;
+}
+
+/* Змінено на grid для кращої адаптивності */
+.servicesGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+}
+
+@media (min-width: 1024px) {
+  /* На великих екранах може бути по 2 картки в ряд */
+  .servicesGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* CTA Section */
+.ctaSection {
+  padding-top: 0;
+}
+
+.customCta {
+  text-align: center;
+  background-color: white;
+  padding: 2.5rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -2px rgba(0, 0, 0, 0.1);
+}
+
+.ctaTitle {
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+.ctaSubtitle {
+  color: #4b5563;
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
+}

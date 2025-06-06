@@ -1,0 +1,89 @@
+.card {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -4px rgba(0, 0, 0, 0.1);
+}
+
+@media (min-width: 768px) {
+  .card {
+    flex-direction: row;
+    gap: 2rem;
+    align-items: flex-start;
+  }
+}
+
+.iconWrapper {
+  flex-shrink: 0;
+  background-color: #e0f2fe; /* light blue bg */
+  border-radius: 50%;
+  padding: 1rem;
+  display: inline-flex;
+  align-self: center; /* Центруємо іконку по горизонталі в мобільній версії */
+}
+
+@media (min-width: 768px) {
+  .iconWrapper {
+    align-self: flex-start;
+  }
+}
+
+.iconWrapper :global(svg) {
+  width: 2.5rem;
+  height: 2.5rem;
+  color: #0284c7; /* darker blue text */
+}
+
+.content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .content {
+    text-align: left;
+  }
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.description {
+  color: #4b5563;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.featuresList {
+  list-style-position: inside;
+  list-style-type: "✓  "; /* Додаємо галочку для кращого вигляду */
+  color: #374151;
+  margin-bottom: 1.5rem;
+  text-align: left;
+  display: inline-block;
+}
+
+.featuresList li {
+  margin-bottom: 0.5rem;
+}
+
+.buttonWrapper {
+  margin-top: auto; /* Притискає кнопку до низу картки */
+}
