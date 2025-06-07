@@ -1,0 +1,17 @@
+.card {
+  background-color: #f9fafb; /* bg-gray-50 */
+  padding: 1.5rem;
+  border-radius: 0.5rem; /* rounded-lg */
+  border: 1px solid #e5e7eb; /* border-gray-200 */
+}
+
+.title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.description {
+  color: #4b5563;
+  line-height: 1.6;
+}
