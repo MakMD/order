@@ -69,7 +69,7 @@ const ContactInfo = () => {
           </svg>
           <div>
             <h4 style={headingStyles}>Адреса</h4>
-            <p>вул. Креативна, 123, м. Київ, Україна</p>
+            <p>6327 Dalmarnock Crescent NW, Calgary, AB T3A 1H3</p>
           </div>
         </div>
 
@@ -92,7 +92,7 @@ const ContactInfo = () => {
           <div>
             <h4 style={headingStyles}>Email</h4>
             <a href="mailto:hello@yourcreativedev.com" style={linkStyles}>
-              hello@yourcreativedev.com
+              myroslav.dzikh@gmail.com
             </a>
           </div>
         </div>
@@ -116,7 +116,7 @@ const ContactInfo = () => {
           <div>
             <h4 style={headingStyles}>Телефон</h4>
             <a href="tel:+380991234567" style={linkStyles}>
-              +38 099 123 45 67
+              +1 587 545 9399
             </a>
           </div>
         </div>
@@ -139,7 +139,7 @@ const ContactInfo = () => {
           </svg>
           <div>
             <h4 style={headingStyles}>Години роботи</h4>
-            <p>Пн - Пт: 9:00 - 18:00</p>
+            <p>Пн - Пт: 9:00 - 22:00</p>
           </div>
         </div>
       </div>
