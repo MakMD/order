@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { NavLink, Link } from "react-router-dom";
 import styles from "./Header.module.css";
 import Button from "./UI/Button/Button";
+import logoImage from "../assets/logo.png"; // <-- Змінено шлях
 
 const Header = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -17,8 +18,12 @@ const Header = () => {
     <header className={styles.header}>
       <div className={styles.container}>
         <nav className={styles.nav}>
-          <Link to="/" className={styles.logo} onClick={closeMenu}>
-            My-<span className={styles.logoDev}>Dev</span>
+          <Link to="/" onClick={closeMenu}>
+            <img
+              src={logoImage}
+              alt="Логотип My-Dev"
+              className={styles.logoImage}
+            />
           </Link>
 
           <div className={styles.desktopNav}>
