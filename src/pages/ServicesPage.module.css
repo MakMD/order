@@ -76,3 +76,90 @@
   margin-top: 0.5rem;
   margin-bottom: 1.5rem;
 }
+.pageWrapper {
+  background-color: white; /* Зробимо фон білим для чистоти */
+}
+
+.section {
+  padding: 4rem 0;
+}
+
+/* Секція з сірим фоном для візуального розділення */
+.sectionGray {
+  background-color: #f9fafb;
+  border-top: 1px solid #e5e7eb;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.container {
+  max-width: 1280px;
+  margin: auto;
+  padding: 0 1.5rem;
+}
+
+.sectionHeading {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.pageTitle,
+.sectionTitle {
+  font-size: 2.25rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+@media (min-width: 768px) {
+  .pageTitle,
+  .sectionTitle {
+    font-size: 2.5rem;
+  }
+}
+
+.pageSubtitle {
+  color: #4b5563;
+  margin-top: 1rem;
+  max-width: 42rem;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.125rem;
+  line-height: 1.75;
+}
+
+.servicesGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+}
+
+@media (min-width: 1024px) {
+  .servicesGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* CTA Section */
+.ctaSection {
+  padding-top: 0;
+  padding-bottom: 5rem;
+  background-color: #f9fafb;
+}
+
+.customCta {
+  text-align: center;
+  background-color: #1f2937; /* bg-gray-800 */
+  color: white;
+  padding: 3rem;
+  border-radius: 0.75rem;
+}
+
+.ctaTitle {
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+.ctaSubtitle {
+  color: #d1d5db; /* text-gray-300 */
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
+}

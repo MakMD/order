@@ -4,8 +4,9 @@ import styles from "./ServicesPage.module.css";
 import ServiceCard from "../components/ServiceCard";
 import Button from "../components/UI/Button/Button";
 
-// Дані, взяті з оригінального HTML
-const servicesData = [
+// --- Дані для карток, згруповані за секціями ---
+
+const coreDevelopmentServices = [
   {
     icon: (
       <svg stroke="currentColor" fill="none" viewBox="0 0 24 24">
@@ -13,21 +14,46 @@ const servicesData = [
           strokeLinecap="round"
           strokeLinejoin="round"
           strokeWidth="2"
-          d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+          d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l-3 3m6 0l-3 3m-3 12l3-3m-6 0l3-3m-4-3a2 2 0 114 0 2 2 0 01-4 0z"
         ></path>
       </svg>
     ),
-    title: "Розробка веб-сайтів",
+    title: "Комплексна розробка з нуля",
     description:
-      "Ми створюємо адаптивні, швидкі та функціональні сайти, які ефективно представляють ваш бізнес в мережі. Від простих лендінгів до складних корпоративних порталів.",
+      "Ми створюємо унікальні сайти та веб-додатки, що повністю відповідають вашим бізнес-цілям, незалежно від сфери діяльності та складності проєкту.",
     features: [
-      "Розробка на сучасних CMS та фреймворках",
-      "Адаптивний дизайн для всіх пристроїв",
-      "Оптимізація швидкості завантаження",
-      "Інтеграція зі сторонніми сервісами (CRM, аналітика)",
+      "Аналіз вимог та проєктування архітектури",
+      "Розробка фронтенду та бекенду",
+      "Тестування та розгортання",
+      "Масштабована та надійна структура",
     ],
-    link: "/contact?service=web-development",
+    link: "/contact?service=custom-development",
   },
+  {
+    icon: (
+      <svg stroke="currentColor" fill="none" viewBox="0 0 24 24">
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
+          d="M4 4v5h5M20 20v-5h-5M4 20L20 4"
+        ></path>
+      </svg>
+    ),
+    title: "Модернізація та редизайн",
+    description:
+      "Вдихнемо нове життя у ваш існуючий проєкт. Ми покращуємо застарілі сайти, роблячи їх сучасними, швидкими, адаптивними та функціональними.",
+    features: [
+      "Аудит існуючого коду та дизайну",
+      "Редизайн та покращення UX",
+      "Адаптація під мобільні пристрої",
+      "Додавання нового функціоналу",
+    ],
+    link: "/contact?service=modernization",
+  },
+];
+
+const businessSolutions = [
   {
     icon: (
       <svg stroke="currentColor" fill="none" viewBox="0 0 24 24">
@@ -41,10 +67,10 @@ const servicesData = [
     ),
     title: "UI/UX Дизайн",
     description:
-      "Проєктуємо інтерфейси, які є не тільки красивими, але й зручними для користувача. Наша мета — забезпечити позитивний досвід взаємодії з вашим продуктом.",
+      "Проєктуємо інтуїтивно зрозумілі та візуально привабливі інтерфейси, які забезпечують позитивний досвід взаємодії та підвищують конверсію.",
     features: [
-      "Дослідження цільової аудиторії",
-      "Створення прототипів та вайрфреймів",
+      "Дослідження користувачів",
+      "Створення інтерактивних прототипів",
       "Розробка дизайн-систем",
       "Тестування юзабіліті",
     ],
@@ -66,11 +92,36 @@ const servicesData = [
       "Розробляємо повнофункціональні інтернет-магазини, які допомагають продавати. Інтегруємо платіжні системи, керування складом та доставкою.",
     features: [
       "Розробка на Shopify, WooCommerce",
-      "Інтеграція онлайн-оплати та доставки",
+      "Інтеграція онлайн-оплати",
       "Системи управління каталогом",
       "Особистий кабінет покупця",
     ],
     link: "/contact?service=e-commerce",
+  },
+];
+
+const growthServices = [
+  {
+    icon: (
+      <svg stroke="currentColor" fill="none" viewBox="0 0 24 24">
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
+          d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+        ></path>
+      </svg>
+    ),
+    title: "Підтримка та обслуговування",
+    description:
+      "Забезпечуємо стабільну та безпечну роботу вашого проєкту після запуску. Пропонуємо пакети підтримки для регулярних оновлень та моніторингу.",
+    features: [
+      "Регулярне резервне копіювання",
+      "Оновлення CMS та плагінів",
+      "Моніторинг безпеки 24/7",
+      "Консультаційна підтримка",
+    ],
+    link: "/contact?service=maintenance",
   },
   {
     icon: (
@@ -83,40 +134,71 @@ const servicesData = [
         ></path>
       </svg>
     ),
-    title: "SEO-оптимізація",
+    title: "SEO та аналітика",
     description:
-      "Підвищуємо позиції вашого сайту в пошукових системах Google, щоб залучити більше органічного трафіку та потенційних клієнтів.",
+      "Допомагаємо вашому сайту займати вищі позиції в пошуку та розуміти поведінку відвідувачів для підвищення ефективності та досягнення бізнес-цілей.",
     features: [
-      "Технічний аудит сайту",
-      "Збір семантичного ядра",
-      "Внутрішня та зовнішня оптимізація",
-      "Аналітика та звітність",
+      "Технічна SEO-оптимізація",
+      "Аналіз трафіку та конверсій",
+      "Налаштування Google Analytics",
+      "Звітність та рекомендації",
     ],
-    link: "/contact?service=seo",
+    link: "/contact?service=seo-analytics",
   },
 ];
 
 const ServicesPage = () => {
   return (
     <div className={styles.pageWrapper}>
+      {/* --- Секція 1: Ключові напрямки --- */}
       <section className={styles.section}>
         <div className={styles.container}>
           <div className={styles.sectionHeading}>
             <h1 className={styles.pageTitle}>Наші Послуги</h1>
             <p className={styles.pageSubtitle}>
-              Ми пропонуємо повний спектр послуг для створення та підтримки
-              вашої присутності в інтернеті.
+              Ми пропонуємо комплексні рішення для будь-яких завдань — від
+              розробки нових проєктів до модернізації існуючих.
             </p>
           </div>
           <div className={styles.servicesGrid}>
-            {servicesData.map((service, index) => (
+            {coreDevelopmentServices.map((service, index) => (
               <ServiceCard key={index} {...service} />
             ))}
           </div>
         </div>
       </section>
 
-      {/* Custom Request CTA Section */}
+      {/* --- Секція 2: Спеціалізовані рішення --- */}
+      <section className={`${styles.section} ${styles.sectionGray}`}>
+        <div className={styles.container}>
+          <div className={styles.sectionHeading}>
+            <h2 className={styles.sectionTitle}>
+              Спеціалізовані рішення для бізнесу
+            </h2>
+          </div>
+          <div className={styles.servicesGrid}>
+            {businessSolutions.map((service, index) => (
+              <ServiceCard key={index} {...service} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* --- Секція 3: Підтримка та розвиток --- */}
+      <section className={styles.section}>
+        <div className={styles.container}>
+          <div className={styles.sectionHeading}>
+            <h2 className={styles.sectionTitle}>Підтримка та розвиток</h2>
+          </div>
+          <div className={styles.servicesGrid}>
+            {growthServices.map((service, index) => (
+              <ServiceCard key={index} {...service} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* --- CTA --- */}
       <section className={`${styles.section} ${styles.ctaSection}`}>
         <div className={styles.container}>
           <div className={styles.customCta}>

@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <footer className={styles.footer}>
       <div className={styles.container}>
-        <p>&copy; {currentYear} YourCreativeDev. Всі права захищено.</p>
+        <p>&copy; {currentYear} My-Dev</p>
       </div>
     </footer>
   );

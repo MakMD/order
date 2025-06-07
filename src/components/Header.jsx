@@ -18,7 +18,7 @@ const Header = () => {
       <div className={styles.container}>
         <nav className={styles.nav}>
           <Link to="/" className={styles.logo} onClick={closeMenu}>
-            YourCreativeDev
+            My-<span className={styles.logoDev}>Dev</span>
           </Link>
 
           <div className={styles.desktopNav}>
