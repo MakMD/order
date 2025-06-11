@@ -1,0 +1,117 @@
+.pageWrapper {
+  background-color: white;
+}
+
+.section {
+  padding: 4rem 0;
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 0 1.5rem;
+}
+
+.sectionHeading {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.sectionTitle {
+  font-size: 2.25rem;
+  font-weight: 700;
+}
+
+.sectionSubtitle {
+  color: #4b5563;
+  margin-top: 1rem;
+  font-size: 1.125rem;
+  max-width: 48rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Hero Section */
+.heroSection {
+  text-align: center;
+  background-color: #111827;
+  color: white;
+  padding: 5rem 0;
+}
+
+.mainTitle {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.mainSubtitle {
+  font-size: 1.25rem;
+  color: #d1d5db;
+  max-width: 48rem;
+  margin: 1rem auto 0 auto;
+  line-height: 1.6;
+}
+
+/* Philosophy Section */
+.philosophyGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.philosophyCard {
+  border-left: 4px solid #3b82f6;
+  padding-left: 1.5rem;
+}
+
+.philosophyCard h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
+}
+
+.philosophyCard p {
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+/* Specialization Section */
+.specSection {
+  background-color: #f9fafb;
+  border-top: 1px solid #e5e7eb;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.specGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.specCard {
+  text-align: center;
+  padding: 2rem;
+  background-color: white;
+  border-radius: 0.5rem;
+  border: 1px solid #e5e7eb;
+}
+
+.specIcon {
+  color: #3b82f6;
+  margin: 0 auto 1.5rem auto;
+}
+
+.specIcon svg {
+  width: 50px;
+  height: 50px;
+}
+
+.specCard h4 {
+  font-size: 1.25rem;
+  margin: 0 0 0.5rem 0;
+  font-weight: 600;
+}
+
+.specCard p {
+  color: #4b5563;
+}

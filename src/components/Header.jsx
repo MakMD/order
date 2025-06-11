@@ -1,17 +1,42 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { NavLink, Link } from "react-router-dom";
 import styles from "./Header.module.css";
 import Button from "./UI/Button/Button";
-import logoImage from "../assets/logo.png"; // <-- Змінено шлях
+import logoImage from "../assets/logo.png";
 
 const Header = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const closeMenu = () => setMobileMenuOpen(false);
+  const mobileMenuButtonRef = useRef(null);
+  const mobileMenuRef = useRef(null);
+
+  const closeMenu = () => {
+    setMobileMenuOpen(false);
+  };
+
+  const toggleMenu = () => {
+    setMobileMenuOpen((prev) => !prev);
+  };
+
+  // Ефект для керування фокусом при закритті меню
+  useEffect(() => {
+    if (!isMobileMenuOpen) {
+      mobileMenuButtonRef.current?.focus();
+    }
+  }, [isMobileMenuOpen]);
+
+  // Ефект для фокусування на першому елементі при відкритті меню
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      const firstFocusableElement =
+        mobileMenuRef.current?.querySelector("a, button");
+      firstFocusableElement?.focus();
+    }
+  }, [isMobileMenuOpen]);
 
   const navLinks = [
     { to: "/", text: "Головна" },
     { to: "/services", text: "Послуги" },
-    { to: "/portfolio", text: "Портфоліо" },
+    { to: "/about", text: "Про нас" },
   ];
 
   return (
@@ -45,9 +70,12 @@ const Header = () => {
 
           <div className={styles.mobileMenuButtonContainer}>
             <button
-              onClick={() => setMobileMenuOpen(!isMobileMenuOpen)}
+              ref={mobileMenuButtonRef}
+              onClick={toggleMenu}
               className={styles.mobileMenuButton}
               aria-label="Toggle menu"
+              aria-expanded={isMobileMenuOpen}
+              aria-controls="mobile-menu"
             >
               <svg className={styles.burgerIcon} viewBox="0 0 24 24">
                 <path d="M4 6h16M4 12h16m-7 6h7"></path>
@@ -57,7 +85,11 @@ const Header = () => {
         </nav>
 
         {isMobileMenuOpen && (
-          <div className={styles.mobileMenu}>
+          <div
+            id="mobile-menu"
+            ref={mobileMenuRef}
+            className={styles.mobileMenu}
+          >
             {navLinks.map((link) => (
               <NavLink
                 key={link.to}
