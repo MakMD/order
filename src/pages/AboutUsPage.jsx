@@ -1,61 +1,62 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import styles from "./AboutUsPage.module.css";
 import Button from "../components/UI/Button/Button";
 
-// Іконки для наших компетенцій
 const SpecializationIcon = ({ children }) => (
   <div className={styles.specIcon}>{children}</div>
 );
 
 const AboutUsPage = () => {
+  const { t } = useTranslation();
+
   return (
     <div className={styles.pageWrapper}>
-      {/* Секція 1: Hero */}
       <section className={`${styles.section} ${styles.heroSection}`}>
-        <div className={styles.container}>
-          <h1 className={styles.mainTitle}>Про My-Dev</h1>
-          <p className={styles.mainSubtitle}>
-            Ми — ваш надійний партнер у світі цифрових технологій. Ми не просто
-            пишемо код, ми створюємо рішення, що працюють на ваш бізнес.
-          </p>
+        <div className={`${styles.container} ${styles.heroContainer}`}>
+          <div className={styles.heroText}>
+            <h1 className={styles.mainTitle}>{t("about_hero_title")}</h1>
+            <p className={styles.mainSubtitle}>{t("about_hero_subtitle")}</p>
+          </div>
+          <div className={styles.heroImageWrapper}>
+            <img
+              src="https://placehold.co/150x150/eef2ff/4338ca?text=Фото"
+              alt="Мирослав, веб-розробник"
+              className={styles.heroImage}
+            />
+          </div>
         </div>
       </section>
 
-      {/* Секція 2: Наша філософія */}
       <section className={styles.section}>
         <div className={styles.container}>
+          <div className={styles.sectionHeading}>
+            <h2 className={styles.sectionTitle}>
+              {t("about_philosophy_title")}
+            </h2>
+          </div>
           <div className={styles.philosophyGrid}>
             <div className={styles.philosophyCard}>
-              <h3>Прозорість</h3>
-              <p>
-                Ми будуємо роботу на чесності та відкритому діалозі. Ви завжди
-                знаєте, на якому етапі знаходиться ваш проєкт.
-              </p>
+              <h3>{t("about_philosophy_1_title")}</h3>
+              <p>{t("about_philosophy_1_desc")}</p>
             </div>
             <div className={styles.philosophyCard}>
-              <h3>Якість</h3>
-              <p>
-                Чистий, ефективний та масштабований код — наш стандарт. Ми
-                створюємо продукти, які легко підтримувати та розвивати.
-              </p>
+              <h3>{t("about_philosophy_2_title")}</h3>
+              <p>{t("about_philosophy_2_desc")}</p>
             </div>
             <div className={styles.philosophyCard}>
-              <h3>Партнерство</h3>
-              <p>
-                Ми занурюємось у ваші бізнес-цілі, щоб запропонувати найкраще
-                технологічне рішення для їх досягнення.
-              </p>
+              <h3>{t("about_philosophy_3_title")}</h3>
+              <p>{t("about_philosophy_3_desc")}</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Секція 3: Спеціалізація */}
       <section className={`${styles.section} ${styles.specSection}`}>
         <div className={styles.container}>
           <div className={styles.sectionHeading}>
-            <h2 className={styles.sectionTitle}>На чому ми спеціалізуємось</h2>
+            <h2 className={styles.sectionTitle}>{t("about_spec_title")}</h2>
           </div>
           <div className={styles.specGrid}>
             <div className={styles.specCard}>
@@ -67,11 +68,8 @@ const AboutUsPage = () => {
                   ></path>
                 </svg>
               </SpecializationIcon>
-              <h4>React & Vite</h4>
-              <p>
-                Створюємо блискавично швидкі та інтерактивні інтерфейси на
-                найсучаснішому стеку.
-              </p>
+              <h4>{t("about_spec_1_title")}</h4>
+              <p>{t("about_spec_1_desc")}</p>
             </div>
             <div className={styles.specCard}>
               <SpecializationIcon>
@@ -82,11 +80,8 @@ const AboutUsPage = () => {
                   ></path>
                 </svg>
               </SpecializationIcon>
-              <h4>Supabase</h4>
-              <p>
-                Використовуємо Supabase як надійний та масштабований бекенд, що
-                прискорює розробку.
-              </p>
+              <h4>{t("about_spec_2_title")}</h4>
+              <p>{t("about_spec_2_desc")}</p>
             </div>
             <div className={styles.specCard}>
               <SpecializationIcon>
@@ -97,27 +92,19 @@ const AboutUsPage = () => {
                   ></path>
                 </svg>
               </SpecializationIcon>
-              <h4>UI/UX & Адаптивність</h4>
-              <p>
-                Приділяємо максимальну увагу дизайну та досвіду користувача на
-                всіх пристроях.
-              </p>
+              <h4>{t("about_spec_3_title")}</h4>
+              <p>{t("about_spec_3_desc")}</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Секція 4: CTA */}
       <section className={styles.section}>
         <div className={styles.container} style={{ textAlign: "center" }}>
-          <h2 className={styles.sectionTitle}>
-            Давайте створимо щось видатне разом
-          </h2>
-          <p className={styles.sectionSubtitle}>
-            Зв'яжіться з нами, щоб обговорити ваш наступний проєкт.
-          </p>
+          <h2 className={styles.sectionTitle}>{t("about_cta_title")}</h2>
+          <p className={styles.sectionSubtitle}>{t("about_cta_subtitle")}</p>
           <Link to="/contact">
-            <Button>Розпочати співпрацю</Button>
+            <Button>{t("about_cta_button")}</Button>
           </Link>
         </div>
       </section>

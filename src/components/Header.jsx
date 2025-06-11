@@ -1,10 +1,13 @@
 import React, { useState, useRef, useEffect } from "react";
 import { NavLink, Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import styles from "./Header.module.css";
 import Button from "./UI/Button/Button";
+import LanguageSwitcher from "./UI/LanguageSwitcher/LanguageSwitcher";
 import logoImage from "../assets/logo.png";
 
 const Header = () => {
+  const { t } = useTranslation();
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
   const mobileMenuButtonRef = useRef(null);
   const mobileMenuRef = useRef(null);
@@ -17,14 +20,12 @@ const Header = () => {
     setMobileMenuOpen((prev) => !prev);
   };
 
-  // Ефект для керування фокусом при закритті меню
   useEffect(() => {
     if (!isMobileMenuOpen) {
       mobileMenuButtonRef.current?.focus();
     }
   }, [isMobileMenuOpen]);
 
-  // Ефект для фокусування на першому елементі при відкритті меню
   useEffect(() => {
     if (isMobileMenuOpen) {
       const firstFocusableElement =
@@ -34,9 +35,10 @@ const Header = () => {
   }, [isMobileMenuOpen]);
 
   const navLinks = [
-    { to: "/", text: "Головна" },
-    { to: "/services", text: "Послуги" },
-    { to: "/about", text: "Про нас" },
+    { to: "/", text: t("nav_home") },
+    { to: "/services", text: t("nav_services") },
+    { to: "/about", text: t("nav_about") },
+    { to: "/cases", text: "Кейси" },
   ];
 
   return (
@@ -64,8 +66,9 @@ const Header = () => {
               </NavLink>
             ))}
             <Link to="/contact">
-              <Button>Замовити</Button>
+              <Button>{t("nav_contact")}</Button>
             </Link>
+            <LanguageSwitcher />
           </div>
 
           <div className={styles.mobileMenuButtonContainer}>
@@ -107,8 +110,11 @@ const Header = () => {
               onClick={closeMenu}
               className={styles.mobileMenuContactLink}
             >
-              <Button>Замовити</Button>
+              <Button>{t("nav_contact")}</Button>
             </Link>
+            <div className={styles.mobileMenuBottom}>
+              <LanguageSwitcher />
+            </div>
           </div>
         )}
       </div>

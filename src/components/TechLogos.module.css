@@ -1,0 +1,28 @@
+.logoContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 3rem;
+  padding: 1rem 0;
+}
+
+.logoWrapper {
+  color: #9ca3af; /* text-gray-400 */
+  transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.logoWrapper:hover {
+  color: #1f2937; /* text-gray-800 */
+  transform: scale(1.1);
+}
+
+.logoWrapper svg {
+  height: 45px;
+}
+
+@media (min-width: 768px) {
+  .logoWrapper svg {
+    height: 50px;
+  }
+}

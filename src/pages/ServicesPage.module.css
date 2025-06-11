@@ -1,5 +1,5 @@
 .pageWrapper {
-  background-color: #f9fafb; /* bg-gray-50 */
+  padding-top: 4rem;
 }
 
 .section {
@@ -7,159 +7,73 @@
 }
 
 .container {
-  max-width: 1280px;
-  margin: auto;
-  padding: 0 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 .sectionHeading {
   text-align: center;
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
 }
 
 .pageTitle {
   font-size: 2.5rem;
-  font-weight: 700;
-}
-
-@media (min-width: 768px) {
-  .pageTitle {
-    font-size: 3rem;
-  }
+  font-weight: bold;
+  color: #374151; /* Gray-700 */
+  margin-bottom: 0.5rem;
 }
 
 .pageSubtitle {
-  color: #4b5563;
-  margin-top: 1rem;
-  max-width: 42rem;
-  margin-left: auto;
-  margin-right: auto;
   font-size: 1.125rem;
-  line-height: 1.75;
+  color: #6b7280; /* Gray-500 */
 }
 
-/* Змінено на grid для кращої адаптивності */
 .servicesGrid {
   display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.servicesGridSingle {
+  display: grid;
   grid-template-columns: 1fr;
-  gap: 2.5rem;
+  gap: 2rem;
+  margin-top: 2rem;
 }
 
-@media (min-width: 1024px) {
-  /* На великих екранах може бути по 2 картки в ряд */
-  .servicesGrid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-/* CTA Section */
-.ctaSection {
-  padding-top: 0;
-}
-
-.customCta {
-  text-align: center;
-  background-color: white;
-  padding: 2.5rem;
-  border-radius: 0.75rem;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-    0 2px 4px -2px rgba(0, 0, 0, 0.1);
-}
-
-.ctaTitle {
-  font-size: 1.75rem;
-  font-weight: 700;
-}
-
-.ctaSubtitle {
-  color: #4b5563;
-  margin-top: 0.5rem;
-  margin-bottom: 1.5rem;
-}
-.pageWrapper {
-  background-color: white; /* Зробимо фон білим для чистоти */
-}
-
-.section {
-  padding: 4rem 0;
-}
-
-/* Секція з сірим фоном для візуального розділення */
 .sectionGray {
-  background-color: #f9fafb;
-  border-top: 1px solid #e5e7eb;
-  border-bottom: 1px solid #e5e7eb;
+  background-color: #f9fafb; /* Gray-50 */
 }
 
-.container {
-  max-width: 1280px;
-  margin: auto;
-  padding: 0 1.5rem;
-}
-
-.sectionHeading {
-  text-align: center;
-  margin-bottom: 4rem;
-}
-
-.pageTitle,
 .sectionTitle {
-  font-size: 2.25rem;
-  font-weight: 700;
-  line-height: 1.2;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #374151;
+  margin-bottom: 1rem;
 }
 
-@media (min-width: 768px) {
-  .pageTitle,
-  .sectionTitle {
-    font-size: 2.5rem;
-  }
-}
-
-.pageSubtitle {
-  color: #4b5563;
-  margin-top: 1rem;
-  max-width: 42rem;
-  margin-left: auto;
-  margin-right: auto;
-  font-size: 1.125rem;
-  line-height: 1.75;
-}
-
-.servicesGrid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2.5rem;
-}
-
-@media (min-width: 1024px) {
-  .servicesGrid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-/* CTA Section */
 .ctaSection {
-  padding-top: 0;
-  padding-bottom: 5rem;
-  background-color: #f9fafb;
+  background-color: #e0f2fe; /* Blue-100 */
+  padding: 5rem 0;
+  text-align: center;
 }
 
 .customCta {
-  text-align: center;
-  background-color: #1f2937; /* bg-gray-800 */
-  color: white;
-  padding: 3rem;
-  border-radius: 0.75rem;
+  max-width: 700px;
+  margin: 0 auto;
 }
 
 .ctaTitle {
-  font-size: 1.75rem;
-  font-weight: 700;
+  font-size: 2.25rem;
+  font-weight: bold;
+  color: #1e3a8a; /* Blue-800 */
+  margin-bottom: 1rem;
 }
 
 .ctaSubtitle {
-  color: #d1d5db; /* text-gray-300 */
-  margin-top: 0.5rem;
-  margin-bottom: 1.5rem;
+  font-size: 1.125rem;
+  color: #3b82f6; /* Blue-500 */
+  margin-bottom: 2rem;
 }

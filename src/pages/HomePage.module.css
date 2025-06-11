@@ -6,7 +6,7 @@
 
 /* Hero Section */
 .heroSection {
-  background-color: #111827; /* bg-gray-900 */
+  background-color: #111827;
   color: white;
   padding: 6rem 0 5rem 0;
   text-align: center;
@@ -21,7 +21,7 @@
 
 .heroSubtitle {
   font-size: 1.125rem;
-  color: #d1d5db; /* text-gray-300 */
+  color: #d1d5db;
   margin-bottom: 2rem;
   max-width: 56rem;
   margin-left: auto;
@@ -57,21 +57,9 @@
   margin-top: 0.5rem;
 }
 
-.featuresGrid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
-}
-
-@media (min-width: 768px) {
-  .featuresGrid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
 /* CTA Section */
 .ctaSection {
-  background-color: #3b82f6; /* bg-blue-600 */
+  background-color: #3b82f6;
   color: white;
   padding: 4rem 0;
   text-align: center;
@@ -87,22 +75,13 @@
   margin-bottom: 1.5rem;
   opacity: 0.9;
 }
+
+/* --- ОНОВЛЕНІ СТИЛІ СІТОК --- */
 .sectionWhite {
   background-color: white;
 }
 
-.featuresGrid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
-}
-
-@media (min-width: 768px) {
-  .featuresGrid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
+.featuresGrid,
 .servicesGrid {
   display: grid;
   grid-template-columns: 1fr;
@@ -110,14 +89,17 @@
 }
 
 @media (min-width: 768px) {
+  .featuresGrid,
   .servicesGrid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (min-width: 1024px) {
+  .featuresGrid,
   .servicesGrid {
-    grid-template-columns: repeat(4, 1fr);
+    /* Робимо сітку з 3 колонок для обох секцій на великих екранах */
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
