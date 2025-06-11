@@ -76,13 +76,9 @@
   opacity: 0.9;
 }
 
-/* Grid Styles */
+/* --- ОНОВЛЕНІ СТИЛІ СІТОК --- */
 .sectionWhite {
   background-color: white;
-}
-
-.sectionGray {
-  background-color: #f9fafb;
 }
 
 .featuresGrid,
@@ -102,6 +98,7 @@
 @media (min-width: 1024px) {
   .featuresGrid,
   .servicesGrid {
+    /* Робимо сітку з 3 колонок для обох секцій на великих екранах */
     grid-template-columns: repeat(3, 1fr);
   }
 }
@@ -115,83 +112,8 @@
   color: #3b82f6;
   font-weight: 600;
   text-decoration: none;
-  transition: text-decoration 0.2s;
 }
 
 .viewAllLink:hover {
   text-decoration: underline;
-}
-.heroSection {
-  display: grid;
-  grid-template-columns: 1fr; /* Одна колонка за замовчуванням */
-  gap: 2rem;
-  align-items: center;
-  padding: 4rem 1.5rem;
-  background-color: var(--background-light);
-}
-
-/* Дві колонки для екранів від 768px */
-@media (min-width: 768px) {
-  .heroSection {
-    grid-template-columns: 1fr 1fr;
-    padding: 6rem 1.5rem;
-  }
-}
-
-.heroText {
-  text-align: center;
-}
-
-@media (min-width: 768px) {
-  .heroText {
-    text-align: left;
-  }
-}
-
-.heroText h1 {
-  font-weight: 800;
-  margin-bottom: 1.5rem;
-}
-
-.heroText p {
-  font-size: 1.125rem;
-  color: var(--text-color-secondary);
-  margin-bottom: 2rem;
-  max-width: 500px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-@media (min-width: 768px) {
-  .heroText p {
-    margin-left: 0;
-  }
-}
-
-.heroButtons {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-}
-
-@media (min-width: 768px) {
-  .heroButtons {
-    justify-content: flex-start;
-  }
-}
-
-.heroImageWrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.heroImage {
-  width: 100%;
-  max-width: 400px;
-  height: auto;
-  border-radius: 0.75rem;
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
-    0 10px 10px -5px rgba(0, 0, 0, 0.04);
-  object-fit: cover;
 }
