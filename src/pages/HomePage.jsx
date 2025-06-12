@@ -5,7 +5,6 @@ import styles from "./HomePage.module.css";
 import Button from "../components/UI/Button/Button";
 import FeatureCard from "../components/FeatureCard";
 import ServiceOverviewCard from "../components/ServiceOverviewCard";
-import TechLogos from "../components/TechLogos";
 
 const HomePage = () => {
   const { t } = useTranslation();
@@ -76,8 +75,8 @@ const HomePage = () => {
         <div className={styles.container}>
           <h1 className={styles.heroTitle}>{t("home_hero_title")}</h1>
           <p className={styles.heroSubtitle}>{t("home_hero_subtitle")}</p>
-          <Link to="/contact">
-            <Button>{t("about_cta_button")}</Button>
+          <Link to="/services">
+            <Button>{t("home_hero_button")}</Button>
           </Link>
         </div>
       </section>
@@ -99,15 +98,6 @@ const HomePage = () => {
       </section>
 
       <section className={`${styles.section} ${styles.sectionWhite}`}>
-        <div className={styles.container}>
-          <div className={styles.sectionHeading}>
-            <h2 className={styles.sectionTitle}>Технології, яким я довіряю</h2>
-          </div>
-          <TechLogos />
-        </div>
-      </section>
-
-      <section className={`${styles.section} ${styles.sectionGray}`}>
         <div className={styles.container}>
           <div className={styles.sectionHeading}>
             <h2 className={styles.sectionTitle}>
@@ -139,7 +129,7 @@ const HomePage = () => {
               variant="secondary"
               style={{ backgroundColor: "white", color: "#3b82f6" }}
             >
-              {t("about_cta_button")}
+              {t("home_cta_button")}
             </Button>
           </Link>
         </div>

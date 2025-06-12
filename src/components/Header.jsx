@@ -38,7 +38,6 @@ const Header = () => {
     { to: "/", text: t("nav_home") },
     { to: "/services", text: t("nav_services") },
     { to: "/about", text: t("nav_about") },
-    { to: "/cases", text: "Кейси" },
   ];
 
   return (

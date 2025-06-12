@@ -6,105 +6,127 @@ import Button from "./UI/Button/Button";
 
 const initialFormData = {
   name: "",
-  contact: "",
+  email: "",
+  phone: "",
+  service: "general",
   message: "",
 };
 
 const ContactForm = () => {
   const [formData, setFormData] = useState(initialFormData);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [error, setError] = useState("");
-  const [success, setSuccess] = useState("");
+  const [formMessage, setFormMessage] = useState({ text: "", type: "" });
   const [searchParams] = useSearchParams();
 
   useEffect(() => {
-    const service = searchParams.get("service");
-    if (service) {
-      setFormData((prev) => ({
-        ...prev,
-        message: `Доброго дня, мене цікавить послуга: ${service}. `,
-      }));
+    const serviceParam = searchParams.get("service");
+    if (serviceParam) {
+      setFormData((prev) => ({ ...prev, service: serviceParam }));
     }
   }, [searchParams]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!formData.name || !formData.contact || !formData.message) {
-      setError("Будь ласка, заповніть всі обовʼязкові поля.");
+    if (!formData.name || !formData.email || !formData.message) {
+      setFormMessage({
+        text: "Будь ласка, заповніть усі обов'язкові поля.",
+        type: "warning",
+      });
       return;
     }
+
     setIsSubmitting(true);
-    setError("");
-    setSuccess("");
+    setFormMessage({ text: "", type: "" });
 
-    const { error: insertError } = await supabase
-      .from("contact_requests")
-      .insert([
-        {
-          name: formData.name,
-          email: formData.contact.includes("@") ? formData.contact : null,
-          phone: !formData.contact.includes("@") ? formData.contact : null,
-          message: formData.message,
-        },
-      ]);
+    const { error } = await supabase.from("contact_requests").insert([
+      {
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone || null,
+        service: formData.service,
+        message: formData.message,
+      },
+    ]);
 
-    setIsSubmitting(false);
-    if (insertError) {
-      setError(`Помилка відправки: ${insertError.message}`);
+    if (error) {
+      setFormMessage({
+        text: `Сталася помилка: ${error.message}`,
+        type: "error",
+      });
     } else {
-      setSuccess("Дякую! Ваша заявка успішно відправлена.");
+      setFormMessage({
+        text: "Дякуємо! Ваше повідомлення успішно надіслано.",
+        type: "success",
+      });
       setFormData(initialFormData);
     }
+
+    setIsSubmitting(false);
   };
 
   return (
-    <div className={styles.formWrapper}>
-      <h3 className={styles.formTitle}>Напишіть мені</h3>
-      {error && <p className={`${styles.message} ${styles.error}`}>{error}</p>}
-      {success && (
-        <p className={`${styles.message} ${styles.success}`}>{success}</p>
+    <div>
+      <h2
+        style={{
+          fontSize: "1.5rem",
+          fontWeight: "700",
+          marginBottom: "1.5rem",
+        }}
+      >
+        Форма замовлення
+      </h2>
+
+      {formMessage.text && (
+        <div
+          style={{
+            padding: "1rem",
+            marginBottom: "1rem",
+            borderRadius: "0.375rem",
+            color: formMessage.type === "success" ? "#166534" : "#991b1b",
+            backgroundColor:
+              formMessage.type === "success" ? "#dcfce7" : "#fee2e2",
+          }}
+        >
+          {formMessage.text}
+        </div>
       )}
+
       <form onSubmit={handleSubmit} noValidate>
-        <div className={styles.field}>
-          <label htmlFor="name" className={styles.label}>
-            Ваше ім'я
+        {/* Поля форми name, email, phone */}
+        <div style={{ marginBottom: "1rem" }}>
+          <label
+            htmlFor="service"
+            style={{ marginBottom: "0.5rem", display: "block" }}
+          >
+            Послуга, що цікавить
           </label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            required
-            value={formData.name}
+          <select
+            id="service"
+            name="service"
+            value={formData.service}
             onChange={handleChange}
-            className={styles.input}
-          />
+            style={{ width: "100%", padding: "0.5rem" }}
+          >
+            <option value="general">Загальне питання</option>
+            <option value="web-development">Розробка веб-сайтів</option>
+            <option value="modernization">
+              Модернізація та перехід на React
+            </option>
+            <option value="maintenance">Підтримка та обслуговування</option>
+            <option value="other">Інше</option>
+          </select>
         </div>
-        <div className={styles.field}>
-          <label htmlFor="contact" className={styles.label}>
-            Ваш Email або Телефон
-          </label>
-          <input
-            type="text"
-            id="contact"
-            name="contact"
-            required
-            value={formData.contact}
-            onChange={handleChange}
-            className={styles.input}
-            placeholder="Як з вами зв'язатися?"
-          />
-        </div>
-        <div className={styles.field}>
-          <label htmlFor="message" className={styles.label}>
-            Коротко опишіть ваш проєкт
+        <div style={{ marginBottom: "1rem" }}>
+          <label
+            htmlFor="message"
+            style={{ marginBottom: "0.5rem", display: "block" }}
+          >
+            Ваше повідомлення
           </label>
           <textarea
             id="message"
@@ -113,14 +135,12 @@ const ContactForm = () => {
             required
             value={formData.message}
             onChange={handleChange}
-            className={`${styles.input} ${styles.textarea}`}
+            style={{ width: "100%", padding: "0.5rem" }}
           ></textarea>
         </div>
         <div>
           <Button type="submit" variant="primary" disabled={isSubmitting}>
-            {isSubmitting
-              ? "Відправка..."
-              : "Отримати безкоштовну консультацію"}
+            {isSubmitting ? "Надсилання..." : "Надіслати"}
           </Button>
         </div>
       </form>

@@ -4,7 +4,6 @@ import MainLayout from "./layouts/MainLayout";
 import HomePage from "./pages/HomePage";
 import ServicesPage from "./pages/ServicesPage";
 import AboutUsPage from "./pages/AboutUsPage";
-import CaseStudiesPage from "./pages/CaseStudiesPage"; // Переконайтеся, що імпорт правильний
 import ContactPage from "./pages/ContactPage";
 
 function App() {
@@ -14,8 +13,6 @@ function App() {
         <Route index element={<HomePage />} />
         <Route path="services" element={<ServicesPage />} />
         <Route path="about" element={<AboutUsPage />} />
-        <Route path="cases" element={<CaseStudiesPage />} />{" "}
-        {/* Переконайтеся, що шлях співпадає з Header.jsx */}
         <Route path="contact" element={<ContactPage />} />
       </Route>
     </Routes>
