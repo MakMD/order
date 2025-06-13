@@ -4,7 +4,6 @@ import { useTranslation } from "react-i18next";
 import styles from "./Header.module.css";
 import Button from "./UI/Button/Button";
 import LanguageSwitcher from "./UI/LanguageSwitcher/LanguageSwitcher";
-import logoImage from "../assets/logo.png";
 
 const Header = () => {
   const { t } = useTranslation();
@@ -44,10 +43,10 @@ const Header = () => {
     <header className={styles.header}>
       <div className={styles.container}>
         <nav className={styles.nav}>
-          <Link to="/" onClick={closeMenu}>
+          <Link to="/" className={styles.logoLink}>
             <img
-              src={logoImage}
-              alt="Логотип My-Dev"
+              src="/logo.svg"
+              alt="YourBrand Logo"
               className={styles.logoImage}
             />
           </Link>

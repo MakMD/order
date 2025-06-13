@@ -1,26 +1,24 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import ContactForm from "../components/ContactForm";
 import ContactInfo from "../components/ContactInfo";
+import Section from "../components/layout/Section";
 import styles from "./ContactPage.module.css";
 
 const ContactPage = () => {
+  const { t } = useTranslation();
+
   return (
-    <section className={styles.section}>
-      <div className={styles.container}>
-        <div className={styles.heading}>
-          <h1 className={styles.title}>Зв'яжіться з нами</h1>
-          <p className={styles.subtitle}>
-            Маєте ідею для проєкту? Заповніть форму, і ми зв'яжемося з вами.
-          </p>
-        </div>
-        <div className={styles.contentWrapper}>
-          <div className={styles.grid}>
-            <ContactForm />
-            <ContactInfo />
-          </div>
-        </div>
+    <Section
+      title={t("contact_page_title")}
+      subtitle={t("contact_page_subtitle")}
+      variant="subtle"
+    >
+      <div className={styles.grid}>
+        <ContactForm />
+        <ContactInfo />
       </div>
-    </section>
+    </Section>
   );
 };
 

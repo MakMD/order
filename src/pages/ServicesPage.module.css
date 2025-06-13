@@ -1,79 +1,34 @@
-.pageWrapper {
-  padding-top: 4rem;
-}
-
-.section {
-  padding: 4rem 0;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-.sectionHeading {
-  text-align: center;
-  margin-bottom: 3rem;
-}
-
-.pageTitle {
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: #374151; /* Gray-700 */
-  margin-bottom: 0.5rem;
-}
-
-.pageSubtitle {
-  font-size: 1.125rem;
-  color: #6b7280; /* Gray-500 */
-}
-
 .servicesGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  margin-top: 2rem;
-}
-
-.servicesGridSingle {
-  display: grid;
   grid-template-columns: 1fr;
-  gap: 2rem;
-  margin-top: 2rem;
+  gap: var(--space-xl);
 }
 
-.sectionGray {
-  background-color: #f9fafb; /* Gray-50 */
+@media (min-width: 768px) {
+  .servicesGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
-.sectionTitle {
-  font-size: 2rem;
-  font-weight: bold;
-  color: #374151;
-  margin-bottom: 1rem;
+.singleServiceGrid {
+  display: grid;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 500px; /* Controls the max width of the single card */
 }
 
 .ctaSection {
-  background-color: #e0f2fe; /* Blue-100 */
-  padding: 5rem 0;
   text-align: center;
+  padding: var(--space-xl) 0;
 }
 
-.customCta {
-  max-width: 700px;
-  margin: 0 auto;
+.ctaSection h3 {
+  font-size: var(--font-size-h2);
+  margin-bottom: var(--space-md);
 }
 
-.ctaTitle {
-  font-size: 2.25rem;
-  font-weight: bold;
-  color: #1e3a8a; /* Blue-800 */
-  margin-bottom: 1rem;
-}
-
-.ctaSubtitle {
-  font-size: 1.125rem;
-  color: #3b82f6; /* Blue-500 */
-  margin-bottom: 2rem;
+.ctaSection p {
+  color: var(--color-text-subtle);
+  max-width: 600px;
+  margin: 0 auto var(--space-xl);
 }

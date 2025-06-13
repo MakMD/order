@@ -1,28 +1,47 @@
 .contactInfo {
-  background-color: #f9fafb; /* gray-50 */
-  padding: 2rem;
-  border-radius: 0.5rem;
-  max-width: 400px;
-  width: 100%;
+  background-color: var(--color-background-subtle);
+  padding: var(--space-xl);
+  border-radius: var(--border-radius-lg);
+  border: 1px solid var(--color-border);
+  height: 100%; /* Makes the card fill grid cell height */
 }
 
-.contactInfo h3 {
-  font-size: 1.25rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
-  color: #111827; /* gray-900 */
+.title {
+  font-size: var(--font-size-h3);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-heading);
+  margin-bottom: var(--space-xl);
+  text-align: center;
+}
+
+.infoList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
 }
 
 .infoItem {
   display: flex;
   align-items: center;
-  margin-bottom: 1rem;
-  color: #374151; /* gray-700 */
+  gap: var(--space-md);
 }
 
-.infoItem svg {
-  width: 1.5rem;
-  height: 1.5rem;
-  margin-right: 0.75rem;
-  color: #3b82f6; /* blue-500 */
+.icon {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  color: var(--color-primary-action);
+}
+
+.link {
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-body);
+  text-decoration: none;
+  word-break: break-all;
+  transition: var(--transition-fast);
+}
+
+.link:hover {
+  color: var(--color-primary-action);
 }

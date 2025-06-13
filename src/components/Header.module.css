@@ -1,18 +1,15 @@
 .header {
-  position: fixed;
+  background-color: var(--color-background-main);
+  padding: var(--space-md) var(--space-lg);
+  border-bottom: 1px solid var(--color-border);
+  position: sticky;
   top: 0;
-  left: 0;
-  right: 0;
-  z-index: 50;
-  background-color: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(12px);
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
 }
 
 .container {
-  max-width: 1280px;
-  margin: auto;
-  padding: 1rem 1.5rem;
+  max-width: var(--site-max-width);
+  margin: 0 auto;
 }
 
 .nav {
@@ -21,97 +18,118 @@
   align-items: center;
 }
 
+.logoLink {
+  flex-shrink: 0;
+}
+
 .logoImage {
-  height: 90px;
+  height: 40px;
   width: auto;
   display: block;
 }
 
+/* Desktop Navigation */
 .desktopNav {
-  display: none;
+  display: none; /* Hidden by default on mobile */
   align-items: center;
-  gap: 2rem;
-}
-
-@media (min-width: 768px) {
-  .desktopNav {
-    display: flex;
-  }
+  gap: var(--space-xs);
 }
 
 .navLink {
-  color: #4b5563;
-  transition: color 0.3s ease-in-out;
+  padding: var(--space-xs) var(--space-md);
+  color: var(--color-text-body);
+  font-weight: var(--font-weight-semibold);
   text-decoration: none;
+  border-radius: var(--border-radius-md);
+  transition: var(--transition-fast);
+  position: relative;
 }
 
 .navLink:hover {
-  color: #3b82f6;
+  background-color: var(--color-background-subtle);
+  color: var(--color-text-heading);
 }
 
 .navLink.active {
-  color: #3b82f6;
-  font-weight: 600;
+  color: var(--color-primary-action);
+  font-weight: var(--font-weight-bold);
 }
 
-/* Mobile Menu */
-.mobileMenuButtonContainer {
-  display: block;
+.navLink.active::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: var(--space-md);
+  right: var(--space-md);
+  height: 2px;
+  background-color: var(--color-primary-action);
 }
-@media (min-width: 768px) {
-  .mobileMenuButtonContainer {
-    display: none;
-  }
+
+/* Mobile Menu Button */
+.mobileMenuButtonContainer {
+  display: block; /* Shown by default on mobile */
 }
 
 .mobileMenuButton {
   background: none;
   border: none;
   cursor: pointer;
-  padding: 0;
+  padding: var(--space-sm);
+  color: var(--color-text-heading);
 }
 
 .burgerIcon {
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 24px;
+  height: 24px;
   stroke: currentColor;
-  fill: none;
-  stroke-linecap: round;
-  stroke-linejoin: round;
   stroke-width: 2;
+  fill: none;
 }
 
+/* Mobile Menu Overlay */
 .mobileMenu {
-  margin-top: 1rem;
+  position: fixed;
+  top: 73px; /* Height of the header */
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--color-background-main);
+  padding: var(--space-xl) var(--space-lg);
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
-}
-
-@media (min-width: 768px) {
-  .mobileMenu {
-    display: none;
-  }
+  align-items: center;
+  gap: var(--space-lg);
+  overflow-y: auto;
 }
 
 .mobileNavLink {
-  padding: 0.5rem 1rem;
-  border-radius: 0.25rem;
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-heading);
   text-decoration: none;
-  color: #374151;
-}
-
-.mobileNavLink:hover {
-  background-color: #e5e7eb;
+  padding: var(--space-md);
 }
 
 .mobileNavLink.active {
-  background-color: #f3f4f6;
-  font-weight: 600;
-  color: #3b82f6;
+  color: var(--color-primary-action);
 }
 
-.mobileMenuContactLink button {
-  width: 100%;
-  margin-top: 0.5rem;
+.mobileMenuContactLink {
+  margin-top: var(--space-md);
+}
+
+.mobileMenuBottom {
+  margin-top: auto; /* Pushes the language switcher to the bottom */
+  padding-bottom: var(--space-xl);
+}
+
+/* Media Query for Desktop */
+@media (min-width: 992px) {
+  .desktopNav {
+    display: flex; /* Show desktop nav */
+    gap: var(--space-md);
+  }
+  .mobileMenuButtonContainer {
+    display: none; /* Hide mobile menu button */
+  }
 }

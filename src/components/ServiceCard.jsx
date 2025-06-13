@@ -2,10 +2,12 @@ import React from "react";
 import styles from "./ServiceCard.module.css";
 import { Link } from "react-router-dom";
 
-const ServiceCard = ({ icon, title, description, features, link }) => {
+const ServiceCard = ({ icon: Icon, title, description, features, link }) => {
   return (
     <div className={styles.card}>
-      <div className={styles.icon}>{icon}</div>
+      <div className={styles.icon}>
+        <Icon />
+      </div>
       <h3 className={styles.title}>{title}</h3>
       <p className={styles.description}>{description}</p>
       {features && (

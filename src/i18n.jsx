@@ -7,7 +7,7 @@ const resources = {
       // Навігація та Footer
       nav_home: "Головна",
       nav_services: "Послуги",
-      nav_about: "Про нас",
+      nav_about: "Про мене",
       nav_contact: "Замовити",
       footer_rights: "My-Dev. Всі права захищено.",
 
@@ -74,10 +74,10 @@ const resources = {
       services_maintenance_title: "Підтримка та обслуговування",
       services_maintenance_desc:
         "Забезпечую стабільну та безпечну роботу вашого проєкту після запуску. Пропоную пакети підтримки для регулярних оновлень та моніторингу.",
-      services_maintenance_f1: "Регулярне резервне копіювання",
-      services_maintenance_f2: "Оновлення залежностей",
-      services_maintenance_f3: "Моніторинг безпеки 24/7",
-      services_maintenance_f4: "Консультаційна підтримка",
+      services_support_f1: "Регулярне резервне копіювання",
+      services_support_f2: "Оновлення залежностей",
+      services_support_f3: "Моніторинг безпеки 24/7",
+      services_support_f4: "Консультаційна підтримка",
       services_cta_title: "Не знайшли потрібну послугу?",
       services_cta_subtitle:
         "Я готовий до індивідуальних завдань. Зв'яжіться зі мною, щоб обговорити ваш унікальний проєкт.",
@@ -111,6 +111,11 @@ const resources = {
       about_cta_subtitle:
         "Зв'яжіться зі мною, щоб обговорити ваш наступний проєкт.",
       about_cta_button: "Розпочати співпрацю",
+
+      // ContactPage
+      contact_page_title: "Зв'яжіться зі мною",
+      contact_page_subtitle:
+        "Маєте ідею, питання чи пропозицію? Заповніть форму нижче, і я зв'яжуся з вами найближчим часом.",
     },
   },
   en: {
@@ -183,10 +188,10 @@ const resources = {
       services_maintenance_title: "Support and Maintenance",
       services_maintenance_desc:
         "I ensure the stable and secure operation of your project after launch. I offer support packages for regular updates and monitoring.",
-      services_maintenance_f1: "Regular backups",
-      services_maintenance_f2: "Dependency updates",
-      services_maintenance_f3: "24/7 security monitoring",
-      services_maintenance_f4: "Consultation support",
+      services_support_f1: "Regular backups",
+      services_support_f2: "Dependency updates",
+      services_support_f3: "24/7 security monitoring",
+      services_support_f4: "Consultation support",
       services_cta_title: "Didn't find the service you need?",
       services_cta_subtitle:
         "I am ready for custom tasks. Contact me to discuss your unique project.",
@@ -219,6 +224,11 @@ const resources = {
       about_cta_title: "Let's create something great together",
       about_cta_subtitle: "Contact me to discuss your next project.",
       about_cta_button: "Start collaboration",
+
+      // ContactPage
+      contact_page_title: "Contact Me",
+      contact_page_subtitle:
+        "Have an idea, question, or proposal? Fill out the form below, and I will get back to you shortly.",
     },
   },
 };
