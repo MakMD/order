@@ -4,6 +4,13 @@ import { initReactI18next } from "react-i18next";
 const resources = {
   uk: {
     translation: {
+      nav_case_studies: "Кейси",
+      case_studies_title: "Мої Роботи",
+      case_studies_subtitle:
+        "Огляд проєктів, що демонструють мій підхід та експертизу.",
+      case_study_tech_title: "Технології",
+      case_study_links_title: "Посилання",
+      case_study_gallery_title: "Галерея",
       // Навігація та Footer
       nav_home: "Головна",
       nav_services: "Послуги",
@@ -120,6 +127,13 @@ const resources = {
   },
   en: {
     translation: {
+      nav_case_studies: "Case Studies",
+      case_studies_title: "My Works",
+      case_studies_subtitle:
+        "An overview of projects that demonstrate my approach and expertise.",
+      case_study_tech_title: "Technologies",
+      case_study_links_title: "Links",
+      case_study_gallery_title: "Gallery",
       // Navigation & Footer
       nav_home: "Home",
       nav_services: "Services",

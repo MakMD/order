@@ -36,6 +36,7 @@ const Header = () => {
   const navLinks = [
     { to: "/", text: t("nav_home") },
     { to: "/services", text: t("nav_services") },
+    { to: "/case-studies", text: t("nav_case_studies") },
     { to: "/about", text: t("nav_about") },
   ];
 
