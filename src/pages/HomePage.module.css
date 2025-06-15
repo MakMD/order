@@ -1,5 +1,12 @@
+/* src/pages/HomePage.module.css */
 .heroSection {
   background-color: var(--color-background-subtle);
+  /* Додано градієнт для глибини */
+  background-image: linear-gradient(
+    180deg,
+    var(--color-background-main) 0%,
+    var(--color-background-subtle) 100%
+  );
   padding: var(--space-xxxl) var(--space-lg);
   text-align: center;
 }
@@ -34,4 +41,25 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: var(--space-xl);
+}
+
+.viewAllServicesLink {
+  text-align: center;
+  margin-top: var(--space-xl);
+}
+
+.ctaSection {
+  text-align: center;
+}
+
+.ctaSection h2 {
+  font-size: var(--font-size-h2);
+}
+.ctaSection p {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-subtle);
+  margin-bottom: var(--space-xl);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }

@@ -20,7 +20,7 @@ const resources = {
 
       // HomePage: Hero
       home_hero_title:
-        "Сучасні веб-сайти на React, що випереджають конкурентів.",
+        "Перетворюю відвідувачів на клієнтів за допомогою швидких та надійних сайтів на React.",
       home_hero_subtitle:
         "Я створюю швидкі, надійні та візуально привабливі сайти для бізнесів, які готові до зростання. Ваш сайт — це інвестиція, а не витрата.",
       home_hero_button: "Переглянути мої послуги",
@@ -38,6 +38,9 @@ const resources = {
       home_feature_3_desc:
         "Після запуску я не залишаю вас наодинці. Пропоную технічну підтримку та плани розвитку вашого продукту.",
 
+      // HomePage: Tech Stack
+      home_tech_stack_title: "Технології, яким я довіряю",
+
       // HomePage: Key Services
       home_key_services_title: "Мої ключові послуги",
       home_key_services_subtitle:
@@ -51,7 +54,7 @@ const resources = {
       home_key_service_3_title: "Технічна підтримка",
       home_key_service_3_desc:
         "Забезпечення стабільної роботи та поступовий розвиток вашого сайту після запуску.",
-      home_view_all_services: "Дізнатися більше про послуги →",
+      home_view_all_services: "Дізнатися більше про послуги",
 
       // HomePage: CTA
       home_cta_title: "Готові розпочати ваш проєкт?",
@@ -93,7 +96,7 @@ const resources = {
       // AboutUsPage
       about_hero_title: "Ваш надійний веб-розробник",
       about_hero_subtitle:
-        "Привіт, я Мирослав. Я допомагаю бізнесам отримувати технологічну перевагу через професійну веб-розробку. Мій підхід — це прозорість, якість коду та фокус на ваших бізнес-цілях.",
+        "Привіт, я М. Я допомагаю бізнесам отримувати технологічну перевагу через професійну веб-розробку. Мій підхід — це прозорість, якість коду та фокус на ваших бізнес-цілях.",
       about_philosophy_title: "Моя філософія",
       about_philosophy_1_title: "Прозорість",
       about_philosophy_1_desc:
@@ -142,7 +145,8 @@ const resources = {
       footer_rights: "My-Dev. All rights reserved.",
 
       // HomePage: Hero
-      home_hero_title: "Modern React websites that outperform competitors.",
+      home_hero_title:
+        "I turn visitors into customers with fast and reliable React sites.",
       home_hero_subtitle:
         "I build fast, reliable, and visually appealing sites for businesses ready to grow. Your website is an investment, not an expense.",
       home_hero_button: "View my services",
@@ -160,6 +164,9 @@ const resources = {
       home_feature_3_desc:
         "After launch, I don't leave you alone. I offer technical support and development plans for your product.",
 
+      // HomePage: Tech Stack
+      home_tech_stack_title: "Technologies I Trust",
+
       // HomePage: Key Services
       home_key_services_title: "My Key Services",
       home_key_services_subtitle: "Solutions focused on quality and results.",
@@ -172,7 +179,7 @@ const resources = {
       home_key_service_3_title: "Technical Support",
       home_key_service_3_desc:
         "Ensuring the stable operation and gradual development of your site after launch.",
-      home_view_all_services: "Learn more about services →",
+      home_view_all_services: "Learn more about services",
 
       // HomePage: CTA
       home_cta_title: "Ready to start your project?",
@@ -214,7 +221,7 @@ const resources = {
       // AboutUsPage
       about_hero_title: "Your Reliable Web Developer",
       about_hero_subtitle:
-        "Hello, I'm Myroslav. I help businesses gain a technological advantage through professional web development. My approach is transparency, code quality, and a focus on your business goals.",
+        "Hello, I'm M. I help businesses gain a technological advantage through professional web development. My approach is transparency, code quality, and a focus on your business goals.",
       about_philosophy_title: "My Philosophy",
       about_philosophy_1_title: "Transparency",
       about_philosophy_1_desc:

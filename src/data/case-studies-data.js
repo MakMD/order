@@ -1,3 +1,4 @@
+// src/data/case-studies-data.js
 // In a real application, you might fetch this from a CMS or API
 export const caseStudies = [
   {
@@ -8,10 +9,10 @@ export const caseStudies = [
     title: 'Сайт для ресторану італійської кухні "Trattoria Bella"',
     description:
       "Веб-сайт для невеликого ресторану італійської кухні, з затишним дизайном та детальним описом страв, що викликає апетит.",
-    mainImage: "/images/case-studies/trattoria-bella-main.jpg", // Placeholder image path
+    mainImage: "/images/case-studies/trattoria-bella-main.jpg",
     technologies: ["React", "Vite", "Supabase", "CSS Modules", "i18next"],
-    liveDemoUrl: null, // Add link when available
-    githubRepoUrl: null, // Add link when available
+    liveDemoUrl: null,
+    githubRepoUrl: null,
 
     challenge: {
       title: "Завдання: Створити апетитний онлайн-досвід",
@@ -35,5 +36,89 @@ export const caseStudies = [
       "/images/case-studies/trattoria-bella-gallery-3.jpg",
     ],
   },
-  // To add a new case study, copy the object above and paste it here, then change the content.
+  {
+    id: 2,
+    slug: "flooring-boss-invoicing",
+    client: "Flooring Boss Inc.",
+    year: 2024,
+    title: "Система створення інвойсів для підрядника",
+    description:
+      "Веб-додаток, розроблений для компанії з укладання підлоги, що дозволяє власнику та його команді швидко та ефективно створювати та керувати інвойсами.",
+    mainImage: "https://placehold.co/800x600/0d1117/e6edf3?text=Flooring+Boss",
+    technologies: [
+      "React",
+      "Vite",
+      "Supabase",
+      "react-pdf",
+      "CSS Modules",
+      "React Router",
+    ],
+    liveDemoUrl: "https://flooring-boss.vercel.app/",
+    githubRepoUrl: null,
+
+    challenge: {
+      title: "Завдання: Автоматизувати процес виставлення рахунків",
+      text: "Клієнт потребував простого та надійного інструменту для створення інвойсів безпосередньо на робочому місці. Головним викликом було створити інтуїтивно зрозумілий інтерфейс, який би дозволяв швидко додавати послуги, розраховувати вартість та генерувати готові до друку PDF-документи.",
+    },
+    solution: {
+      title: "Рішення: Спеціалізований веб-додаток",
+      text: "Я розробив односторінковий додаток (SPA) на React, який забезпечує миттєвий відгук інтерфейсу. Для зберігання даних про клієнтів та послуги була використана база даних Supabase. Ключовою функцією стала генерація PDF-інвойсів на льоту, що дозволило повністю оцифрувати та прискорити процес виставлення рахунків.",
+    },
+    results: {
+      title: "Результат",
+      items: [
+        "Процес створення інвойсу скоротився з 15 хвилин до 2.",
+        "Зменшено кількість помилок завдяки автоматичним розрахункам.",
+        "Створено централізовану базу клієнтів та наданих послуг.",
+      ],
+    },
+    gallery: [
+      "https://placehold.co/800x600/161b22/e6edf3?text=Invoice+Form",
+      "https://placehold.co/800x600/161b22/e6edf3?text=PDF+Preview",
+    ],
+  },
+  {
+    id: 3,
+    slug: "floor-boss-work-management",
+    client: "Floor Boss Inc.",
+    year: 2024,
+    title: "Платформа для управління робочими командами",
+    description:
+      "Комплексне рішення для компанії з 30+ робітниками, що забезпечує планування робіт, комунікацію, звітність та контроль якості.",
+    mainImage:
+      "https://placehold.co/800x600/0d1117/e6edf3?text=Floor+Boss+Work",
+    technologies: [
+      "React",
+      "Vite",
+      "Supabase (Auth, DB, Storage)",
+      "Realtime",
+      "PWA",
+      "React Context",
+    ],
+    liveDemoUrl: "https://floor-boss-work.vercel.app/",
+    githubRepoUrl: null,
+
+    challenge: {
+      title: "Завдання: Організувати роботу 30+ співробітників у полях",
+      text: "Основна проблема полягала у відсутності єдиної системи для комунікації та управління завданнями. Роботодавець витрачав години на координацію по телефону, а робітники не мали чіткого доступу до деталей замовлень, що призводило до помилок та затримок.",
+    },
+    solution: {
+      title: "Рішення: Інтерактивна платформа для команди",
+      text: "Було створено веб-додаток з різними ролями доступу для власника та робітників. Власник отримав календар-планувальник та дашборд для моніторингу. Робітники отримали персональні кабінети, де вони бачать свої завдання, можуть спілкуватися в чаті, додавати фото виконаних робіт через Supabase Storage та залишати нотатки.",
+    },
+    results: {
+      title: "Результат",
+      items: [
+        "Централізовано планування та звітність по всім об'єктам.",
+        "Налагоджено прозору комунікацію між офісом та робітниками в полях.",
+        "Впроваджено фото-звітність для контролю якості виконаних робіт.",
+        "Підвищено ефективність та автономність кожного робітника.",
+      ],
+    },
+    gallery: [
+      "https://placehold.co/800x600/161b22/e6edf3?text=Dashboard",
+      "https://placehold.co/800x600/161b22/e6edf3?text=Task+View",
+      "https://placehold.co/800x600/161b22/e6edf3?text=Mobile+Interface",
+    ],
+  },
 ];

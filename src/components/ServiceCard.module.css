@@ -1,8 +1,9 @@
+/* src/components/ServiceCard.module.css */
 .card {
-  background-color: var(--color-background-main);
+  background-color: var(--color-background-subtle);
   border-radius: var(--border-radius-lg);
   border: 1px solid var(--color-border);
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-sm);
   padding: var(--space-xl);
   display: flex;
   flex-direction: column;
@@ -11,7 +12,8 @@
 
 .card:hover {
   transform: translateY(-4px);
-  box-shadow: var(--shadow-lg);
+  box-shadow: var(--shadow-glow); /* Ефект світіння */
+  border-color: var(--color-primary-action);
 }
 
 .icon {
@@ -20,7 +22,7 @@
   align-items: center;
   width: 64px;
   height: 64px;
-  background-color: var(--color-background-subtle);
+  background-color: var(--color-background-main);
   border-radius: 50%;
   margin-bottom: var(--space-lg);
   color: var(--color-primary-action);
@@ -42,7 +44,7 @@
   font-size: var(--font-size-md);
   color: var(--color-text-body);
   margin-bottom: var(--space-md);
-  flex-grow: 1; /* Pushes the link to the bottom */
+  flex-grow: 1;
 }
 
 .features {
@@ -52,7 +54,7 @@
   text-align: left;
   margin-bottom: var(--space-lg);
   padding-left: 0;
-  flex-grow: 1; /* Pushes the link to the bottom */
+  flex-grow: 1;
 }
 
 .features li {
@@ -73,7 +75,7 @@
   font-weight: var(--font-weight-semibold);
   color: var(--color-primary-action);
   text-decoration: none;
-  margin-top: auto; /* Aligns to the bottom */
+  margin-top: auto;
 }
 
 .link:hover {

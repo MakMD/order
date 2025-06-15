@@ -1,19 +1,20 @@
+/* src/components/case-studies/CaseStudyCard.module.css */
 .card {
   display: flex;
   flex-direction: column;
-  background-color: var(--color-background-main);
+  background-color: var(--color-background-subtle);
   border: 1px solid var(--color-border);
   border-radius: var(--border-radius-lg);
   overflow: hidden;
   text-decoration: none;
   height: 100%;
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-sm);
   transition: var(--transition-fast);
 }
 
 .card:hover {
   transform: translateY(-4px);
-  box-shadow: var(--shadow-lg);
+  box-shadow: var(--shadow-glow); /* Ефект світіння */
   border-color: var(--color-primary-action);
 }
 
@@ -57,8 +58,9 @@
 }
 
 .tag {
-  background-color: var(--color-background-subtle);
-  color: var(--color-text-subtle);
+  background-color: var(--color-background-main);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-body);
   font-size: var(--font-size-xs);
   font-weight: var(--font-weight-medium);
   padding: var(--space-xxs) var(--space-sm);

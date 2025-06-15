@@ -1,3 +1,4 @@
+/* src/components/UI/Button/Button.module.css */
 .button {
   display: inline-flex;
   align-items: center;
@@ -17,7 +18,8 @@
 .button:hover {
   text-decoration: none;
   transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-glow); /* Ефект світіння */
+  filter: brightness(1.1);
 }
 
 .primary {
@@ -32,12 +34,19 @@
 }
 
 .secondary {
-  background-color: var(--color-background-subtle);
-  color: var(--color-text-heading);
+  background-color: transparent;
+  color: var(--color-text-body);
   border-color: var(--color-border);
 }
 
 .secondary:hover {
-  background-color: #e9ebee; /* A slightly darker subtle background */
-  border-color: #c1c7d0;
+  background-color: var(--color-background-subtle);
+  border-color: var(--color-primary-action);
+  color: var(--color-text-heading);
+}
+.button:hover {
+  text-decoration: none;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md); /* Повернено до змінної */
+  filter: brightness(1.1);
 }

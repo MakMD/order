@@ -1,43 +1,40 @@
-/* Import Font */
+/* src/index.css */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
 
 /*
   ========================================
-  DESIGN TOKENS - SINGLE SOURCE OF TRUTH
+  DESIGN TOKENS - DUAL THEME SUPPORT
   ========================================
-  Brand Identity: Professional, Reliable, Fast, Creative
 */
 :root {
-  /* FONT */
+  /* FONT (Shared) */
   --font-family-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, Helvetica, Arial, sans-serif;
 
-  /* COLOR PALETTE */
-  /* Professional & Reliable: Deep blues and grays */
-  --color-primary-action: #0052cc; /* A strong, professional blue */
+  /* LIGHT THEME (Default) */
+  --color-primary-action: #0052cc;
   --color-primary-hover: #003e99;
-  --color-text-heading: #172b4d; /* Almost black, but softer */
+  --color-text-heading: #172b4d;
   --color-text-body: #42526e;
   --color-text-subtle: #6b778c;
   --color-background-main: #ffffff;
-  --color-background-subtle: #f4f5f7; /* Subtle gray for section separation */
-
-  /* Speed & Creativity: Bright, energetic accent */
-  --color-accent: #00b8d9; /* A vibrant cyan/teal */
-  --color-accent-hover: #00a3bf;
-
-  /* System Colors */
+  --color-background-subtle: #f4f5f7;
+  --color-accent: #00b8d9;
   --color-border: #dfe1e6;
-  --color-success: #36b37e;
-  --color-danger: #de350b;
-  --color-border: #dfe1e6;
-  --color-success: #006644;
+  --color-success: #2ea043;
   --color-success-background: #e3fcef;
   --color-danger: #bf2600;
   --color-danger-background: #ffebe6;
   --color-warning: #ff8b00;
   --color-warning-background: #fff0b3;
-  /* SPACING SCALE (8px base grid) */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-glow: 0 0 12px 0 rgba(0, 123, 255, 0); /* Glow is off in light mode */
+
+  /* Shared Scales and Variables */
   --space-xxs: 4px;
   --space-xs: 8px;
   --space-sm: 12px;
@@ -47,15 +44,14 @@
   --space-xxl: 48px;
   --space-xxxl: 64px;
 
-  /* TYPOGRAPHY SCALE */
-  --font-size-xs: 0.75rem; /* 12px */
-  --font-size-sm: 0.875rem; /* 14px */
-  --font-size-md: 1rem; /* 16px */
-  --font-size-lg: 1.125rem; /* 18px */
-  --font-size-xl: 1.25rem; /* 20px */
-  --font-size-h3: 1.5rem; /* 24px */
-  --font-size-h2: 2rem; /* 32px */
-  --font-size-h1: 2.5rem; /* 40px */
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-md: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-h3: 1.5rem;
+  --font-size-h2: 2rem;
+  --font-size-h1: 2.5rem;
 
   --font-weight-regular: 400;
   --font-weight-medium: 500;
@@ -65,20 +61,37 @@
   --line-height-body: 1.6;
   --line-height-heading: 1.2;
 
-  /* UI & LAYOUT VARIABLES */
   --border-radius-sm: 4px;
   --border-radius-md: 8px;
   --border-radius-lg: 16px;
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-    0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
-    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+
   --transition-fast: all 0.2s ease-in-out;
   --site-max-width: 1200px;
 }
 
-/* Global Styles Reset & Base */
+[data-theme="dark"] {
+  /* DARK THEME */
+  --color-primary-action: #007bff;
+  --color-primary-hover: #3395ff;
+  --color-text-heading: #e6edf3;
+  --color-text-body: #b0bac3;
+  --color-text-subtle: #768390;
+  --color-background-main: #0d1117;
+  --color-background-subtle: #161b22;
+  --color-border: #30363d;
+  --color-success: #2ea043;
+  --color-success-background: rgba(46, 160, 67, 0.15);
+  --color-danger: #f85149;
+  --color-danger-background: rgba(248, 81, 73, 0.15);
+  --color-warning: #d29922;
+  --color-warning-background: rgba(210, 153, 34, 0.15);
+  --shadow-sm: none;
+  --shadow-md: none;
+  --shadow-lg: none;
+  --shadow-glow: 0 0 12px 0 rgba(0, 123, 255, 0.4);
+}
+
+/* Global Styles Reset & Base (без змін) */
 *,
 *::before,
 *::after {
@@ -86,21 +99,20 @@
   margin: 0;
   padding: 0;
 }
-
 html {
-  font-size: 100%; /* 1rem = 16px */
+  font-size: 100%;
+  color-scheme: light dark; /* Informs browser about supported themes */
 }
-
 body {
   font-family: var(--font-family-sans);
   font-size: var(--font-size-md);
   line-height: var(--line-height-body);
   color: var(--color-text-body);
   background-color: var(--color-background-main);
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth theme transition */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
 h1,
 h2,
 h3,
@@ -113,7 +125,6 @@ h6 {
   color: var(--color-text-heading);
   margin-bottom: var(--space-md);
 }
-
 h1 {
   font-size: var(--font-size-h1);
 }
@@ -123,17 +134,14 @@ h2 {
 h3 {
   font-size: var(--font-size-h3);
 }
-
 p {
   margin-bottom: var(--space-md);
 }
-
 a {
   color: var(--color-primary-action);
   text-decoration: none;
   transition: var(--transition-fast);
 }
-
 a:hover {
   text-decoration: underline;
   color: var(--color-primary-hover);
