@@ -5,21 +5,27 @@
   position: sticky;
   top: 0;
   z-index: 1000;
+  transition: background-color 0.3s ease;
 }
 
 .container {
   max-width: var(--site-max-width);
   margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
 }
 
 .logoLink {
   flex-shrink: 0;
+  z-index: 1001; /* Ensure logo is above mobile menu overlay */
 }
 
 .logoImage {
@@ -30,9 +36,7 @@
 
 /* Desktop Navigation */
 .desktopNav {
-  display: none; /* Hidden by default on mobile */
-  align-items: center;
-  gap: var(--space-xs);
+  display: none; /* Hidden by default */
 }
 
 .navLink {
@@ -67,7 +71,8 @@
 
 /* Mobile Menu Button */
 .mobileMenuButtonContainer {
-  display: block; /* Shown by default on mobile */
+  display: block; /* Shown by default */
+  z-index: 1001; /* Ensure button is above mobile menu overlay */
 }
 
 .mobileMenuButton {
@@ -89,17 +94,19 @@
 /* Mobile Menu Overlay */
 .mobileMenu {
   position: fixed;
-  top: 73px; /* Height of the header */
+  top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   background-color: var(--color-background-main);
-  padding: var(--space-xl) var(--space-lg);
+  padding: var(--space-xxxl) var(--space-lg);
+  padding-top: 120px; /* Extra top padding for content */
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: var(--space-lg);
   overflow-y: auto;
+  z-index: 999; /* Below header controls */
 }
 
 .mobileNavLink {
@@ -121,12 +128,16 @@
 .mobileMenuBottom {
   margin-top: auto; /* Pushes the language switcher to the bottom */
   padding-bottom: var(--space-xl);
+  display: flex;
+  gap: var(--space-lg);
+  align-items: center;
 }
 
 /* Media Query for Desktop */
 @media (min-width: 992px) {
   .desktopNav {
     display: flex; /* Show desktop nav */
+    align-items: center;
     gap: var(--space-md);
   }
   .mobileMenuButtonContainer {

@@ -4,6 +4,7 @@ import { initReactI18next } from "react-i18next";
 const resources = {
   uk: {
     translation: {
+      // --- Попередні ключі без змін ---
       nav_case_studies: "Кейси",
       case_studies_title: "Мої Роботи",
       case_studies_subtitle:
@@ -11,21 +12,16 @@ const resources = {
       case_study_tech_title: "Технології",
       case_study_links_title: "Посилання",
       case_study_gallery_title: "Галерея",
-      // Навігація та Footer
       nav_home: "Головна",
       nav_services: "Послуги",
       nav_about: "Про мене",
       nav_contact: "Замовити",
       footer_rights: "My-Dev. Всі права захищено.",
-
-      // HomePage: Hero
       home_hero_title:
         "Перетворюю відвідувачів на клієнтів за допомогою швидких та надійних сайтів на React.",
       home_hero_subtitle:
         "Я створюю швидкі, надійні та візуально привабливі сайти для бізнесів, які готові до зростання. Ваш сайт — це інвестиція, а не витрата.",
       home_hero_button: "Переглянути мої послуги",
-
-      // HomePage: Features
       home_features_title: "Чому обирають мене?",
       home_features_subtitle: "Я пропоную більше, ніж просто код.",
       home_feature_1_title: "Комплексний підхід",
@@ -37,11 +33,7 @@ const resources = {
       home_feature_3_title: "Підтримка та розвиток",
       home_feature_3_desc:
         "Після запуску я не залишаю вас наодинці. Пропоную технічну підтримку та плани розвитку вашого продукту.",
-
-      // HomePage: Tech Stack
       home_tech_stack_title: "Технології, яким я довіряю",
-
-      // HomePage: Key Services
       home_key_services_title: "Мої ключові послуги",
       home_key_services_subtitle:
         "Рішення, сфокусовані на якості та результаті.",
@@ -55,14 +47,10 @@ const resources = {
       home_key_service_3_desc:
         "Забезпечення стабільної роботи та поступовий розвиток вашого сайту після запуску.",
       home_view_all_services: "Дізнатися більше про послуги",
-
-      // HomePage: CTA
       home_cta_title: "Готові розпочати ваш проєкт?",
       home_cta_subtitle:
         "Давайте обговоримо ваші ідеї та знайдемо найкраще рішення для вашого бізнесу.",
       home_cta_button: "Зв'язатися зі мною",
-
-      // ServicesPage
       services_page_title: "Мої Послуги",
       services_page_subtitle:
         "Я пропоную комплексні рішення, сфокусовані на якості коду, швидкості та надійності вашого веб-сайту.",
@@ -92,8 +80,6 @@ const resources = {
       services_cta_subtitle:
         "Я готовий до індивідуальних завдань. Зв'яжіться зі мною, щоб обговорити ваш унікальний проєкт.",
       services_cta_button: "Обговорити проєкт",
-
-      // AboutUsPage
       about_hero_title: "Ваш надійний веб-розробник",
       about_hero_subtitle:
         "Привіт, я М. Я допомагаю бізнесам отримувати технологічну перевагу через професійну веб-розробку. Мій підхід — це прозорість, якість коду та фокус на ваших бізнес-цілях.",
@@ -122,14 +108,35 @@ const resources = {
         "Зв'яжіться зі мною, щоб обговорити ваш наступний проєкт.",
       about_cta_button: "Розпочати співпрацю",
 
-      // ContactPage
+      // --- Нові та оновлені ключі ---
       contact_page_title: "Зв'яжіться зі мною",
       contact_page_subtitle:
         "Маєте ідею, питання чи пропозицію? Заповніть форму нижче, і я зв'яжуся з вами найближчим часом.",
+
+      contact_form_title: "Форма замовлення",
+      contact_info_title: "Мої контакти",
+      contact_form_name_label: "Ваше ім'я *",
+      contact_form_email_label: "Email *",
+      contact_form_phone_label: "Телефон (необов'язково)",
+      contact_form_service_label: "Послуга, що цікавить",
+      contact_form_message_label: "Ваше повідомлення *",
+      contact_form_service_general: "Загальне питання",
+      contact_form_service_dev: "Розробка веб-сайтів",
+      contact_form_service_modernization: "Модернізація та перехід на React",
+      contact_form_service_maintenance: "Підтримка та обслуговування",
+      contact_form_service_other: "Інше",
+      contact_form_submit_btn: "Надіслати",
+      contact_form_submitting_btn: "Надсилання...",
+      contact_form_validation_warning:
+        "Будь ласка, заповніть усі обов'язкові поля.",
+      contact_form_success_message:
+        "Дякуємо! Ваше повідомлення успішно надіслано.",
+      contact_form_error_message: "Сталася помилка: {{error}}",
     },
   },
   en: {
     translation: {
+      // --- Previous keys without changes ---
       nav_case_studies: "Case Studies",
       case_studies_title: "My Works",
       case_studies_subtitle:
@@ -137,21 +144,16 @@ const resources = {
       case_study_tech_title: "Technologies",
       case_study_links_title: "Links",
       case_study_gallery_title: "Gallery",
-      // Navigation & Footer
       nav_home: "Home",
       nav_services: "Services",
       nav_about: "About Me",
       nav_contact: "Order",
       footer_rights: "My-Dev. All rights reserved.",
-
-      // HomePage: Hero
       home_hero_title:
         "I turn visitors into customers with fast and reliable React sites.",
       home_hero_subtitle:
         "I build fast, reliable, and visually appealing sites for businesses ready to grow. Your website is an investment, not an expense.",
       home_hero_button: "View my services",
-
-      // HomePage: Features
       home_features_title: "Why Choose Me?",
       home_features_subtitle: "I offer more than just code.",
       home_feature_1_title: "Comprehensive Approach",
@@ -163,11 +165,7 @@ const resources = {
       home_feature_3_title: "Support and Growth",
       home_feature_3_desc:
         "After launch, I don't leave you alone. I offer technical support and development plans for your product.",
-
-      // HomePage: Tech Stack
       home_tech_stack_title: "Technologies I Trust",
-
-      // HomePage: Key Services
       home_key_services_title: "My Key Services",
       home_key_services_subtitle: "Solutions focused on quality and results.",
       home_key_service_1_title: "Turnkey Development",
@@ -180,14 +178,10 @@ const resources = {
       home_key_service_3_desc:
         "Ensuring the stable operation and gradual development of your site after launch.",
       home_view_all_services: "Learn more about services",
-
-      // HomePage: CTA
       home_cta_title: "Ready to start your project?",
       home_cta_subtitle:
         "Let's discuss your ideas and find the best solution for your business.",
       home_cta_button: "Contact me",
-
-      // ServicesPage
       services_page_title: "My Services",
       services_page_subtitle:
         "I offer comprehensive solutions focused on code quality, speed, and the reliability of your website.",
@@ -217,8 +211,6 @@ const resources = {
       services_cta_subtitle:
         "I am ready for custom tasks. Contact me to discuss your unique project.",
       services_cta_button: "Discuss a project",
-
-      // AboutUsPage
       about_hero_title: "Your Reliable Web Developer",
       about_hero_subtitle:
         "Hello, I'm M. I help businesses gain a technological advantage through professional web development. My approach is transparency, code quality, and a focus on your business goals.",
@@ -246,10 +238,30 @@ const resources = {
       about_cta_subtitle: "Contact me to discuss your next project.",
       about_cta_button: "Start collaboration",
 
-      // ContactPage
+      // --- New and updated keys ---
       contact_page_title: "Contact Me",
       contact_page_subtitle:
         "Have an idea, question, or proposal? Fill out the form below, and I will get back to you shortly.",
+
+      contact_form_title: "Order Form",
+      contact_info_title: "My Contacts",
+      contact_form_name_label: "Your name *",
+      contact_form_email_label: "Email *",
+      contact_form_phone_label: "Phone (optional)",
+      contact_form_service_label: "Service of interest",
+      contact_form_message_label: "Your message *",
+      contact_form_service_general: "General question",
+      contact_form_service_dev: "Website development",
+      contact_form_service_modernization:
+        "Modernization and migration to React",
+      contact_form_service_maintenance: "Support and maintenance",
+      contact_form_service_other: "Other",
+      contact_form_submit_btn: "Send",
+      contact_form_submitting_btn: "Sending...",
+      contact_form_validation_warning: "Please fill in all required fields.",
+      contact_form_success_message:
+        "Thank you! Your message has been sent successfully.",
+      contact_form_error_message: "An error occurred: {{error}}",
     },
   },
 };

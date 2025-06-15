@@ -8,7 +8,7 @@ import Button from "../../components/UI/Button/Button";
 
 const CaseStudyDetailPage = () => {
   const { slug } = useParams();
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const caseStudy = caseStudies.find((study) => study.slug === slug);
 
   if (!caseStudy) {
@@ -20,6 +20,8 @@ const CaseStudyDetailPage = () => {
       </Section>
     );
   }
+
+  const lang = i18n.language;
 
   const {
     title,
@@ -41,10 +43,12 @@ const CaseStudyDetailPage = () => {
       <header className={styles.hero}>
         <div className={styles.heroContent}>
           <p className={styles.meta}>
-            {client} • {year}
+            {client[lang] || client.uk} • {year}
           </p>
-          <h1 className={styles.title}>{title}</h1>
-          <p className={styles.description}>{description}</p>
+          <h1 className={styles.title}>{title[lang] || title.uk}</h1>
+          <p className={styles.description}>
+            {description[lang] || description.uk}
+          </p>
         </div>
       </header>
 
@@ -52,18 +56,24 @@ const CaseStudyDetailPage = () => {
         <div className={styles.detailsGrid}>
           <div className={styles.leftColumn}>
             <div className={styles.section}>
-              <h2 className={styles.sectionTitle}>{challenge.title}</h2>
-              <p>{challenge.text}</p>
+              <h2 className={styles.sectionTitle}>
+                {challenge.title[lang] || challenge.title.uk}
+              </h2>
+              <p>{challenge.text[lang] || challenge.text.uk}</p>
             </div>
             <div className={styles.section}>
-              <h2 className={styles.sectionTitle}>{solution.title}</h2>
-              <p>{solution.text}</p>
+              <h2 className={styles.sectionTitle}>
+                {solution.title[lang] || solution.title.uk}
+              </h2>
+              <p>{solution.text[lang] || solution.text.uk}</p>
             </div>
             <div className={styles.section}>
-              <h2 className={styles.sectionTitle}>{results.title}</h2>
+              <h2 className={styles.sectionTitle}>
+                {results.title[lang] || results.title.uk}
+              </h2>
               <ul className={styles.resultsList}>
                 {results.items.map((item, index) => (
-                  <li key={index}>{item}</li>
+                  <li key={index}>{item[lang] || item.uk}</li>
                 ))}
               </ul>
             </div>
@@ -121,7 +131,7 @@ const CaseStudyDetailPage = () => {
                 <img
                   key={index}
                   src={image}
-                  alt={`${title} screenshot ${index + 1}`}
+                  alt={`${title[lang] || title.uk} screenshot ${index + 1}`}
                   className={styles.galleryImage}
                 />
               ))}
