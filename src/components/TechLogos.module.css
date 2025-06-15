@@ -8,12 +8,12 @@
 }
 
 .logoWrapper {
-  color: #9ca3af; /* text-gray-400 */
+  color: var(--color-text-subtle); /* Оновлено для кращої відповідності темі */
   transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
 .logoWrapper:hover {
-  color: #1f2937; /* text-gray-800 */
+  color: var(--color-primary-action); /* Оновлено для брендованого ефекту */
   transform: scale(1.1);
 }
 
