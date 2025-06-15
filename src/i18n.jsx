@@ -4,7 +4,9 @@ import { initReactI18next } from "react-i18next";
 const resources = {
   uk: {
     translation: {
-      // --- Попередні ключі без змін ---
+      service_card_learn_more: "Дізнатися більше", // <-- НОВИЙ КЛЮЧ
+      services_cta_button: "Обговорити проєкт",
+      about_hero_title: "Ваш надійний веб-розробник",
       nav_case_studies: "Кейси",
       case_studies_title: "Мої Роботи",
       case_studies_subtitle:
@@ -107,7 +109,28 @@ const resources = {
       about_cta_subtitle:
         "Зв'яжіться зі мною, щоб обговорити ваш наступний проєкт.",
       about_cta_button: "Розпочати співпрацю",
+      nav_home: "Головна",
+      nav_services: "Послуги",
+      nav_case_studies: "Кейси",
+      nav_about: "Про мене",
+      nav_contact: "Замовити",
+      footer_rights: "My-Dev. Всі права захищено.",
+      // ... (багато інших ключів) ...
+      service_card_learn_more: "Дізнатися більше",
 
+      // --- НОВІ КЛЮЧІ ---
+      logo_alt_text: "Логотип My-Dev",
+      theme_switcher_label: "Перемкнутись на {{theme}} тему",
+      theme_switcher_light: "світлу",
+      theme_switcher_dark: "темну",
+      switch_to_ukrainian_label: "Перемкнутись на українську",
+      switch_to_english_label: "Перемкнутись на англійську",
+      case_study_not_found_title: "Кейс не знайдено",
+      case_study_not_found_subtitle: "Повернутися до списку кейсів",
+      case_study_all_cases_button: "Усі кейси",
+      case_study_live_demo_button: "Live Demo",
+      case_study_github_button: "GitHub",
+      case_study_gallery_alt_text_part: "скріншот",
       // --- Нові та оновлені ключі ---
       contact_page_title: "Зв'яжіться зі мною",
       contact_page_subtitle:
@@ -136,7 +159,9 @@ const resources = {
   },
   en: {
     translation: {
-      // --- Previous keys without changes ---
+      service_card_learn_more: "Learn more", // <-- NEW KEY
+      services_cta_button: "Discuss a project",
+      about_hero_title: "Your Reliable Web Developer",
       nav_case_studies: "Case Studies",
       case_studies_title: "My Works",
       case_studies_subtitle:
@@ -237,7 +262,28 @@ const resources = {
       about_cta_title: "Let's create something great together",
       about_cta_subtitle: "Contact me to discuss your next project.",
       about_cta_button: "Start collaboration",
+      nav_home: "Home",
+      nav_services: "Services",
+      nav_case_studies: "Case Studies",
+      nav_about: "About Me",
+      nav_contact: "Order",
+      footer_rights: "My-Dev. All rights reserved.",
+      // ... (many other keys) ...
+      service_card_learn_more: "Learn more",
 
+      // --- NEW KEYS ---
+      logo_alt_text: "My-Dev Logo",
+      theme_switcher_label: "Switch to {{theme}} mode",
+      theme_switcher_light: "light",
+      theme_switcher_dark: "dark",
+      switch_to_ukrainian_label: "Switch to Ukrainian",
+      switch_to_english_label: "Switch to English",
+      case_study_not_found_title: "Case Study Not Found",
+      case_study_not_found_subtitle: "Return to the list of case studies",
+      case_study_all_cases_button: "All Case Studies",
+      case_study_live_demo_button: "Live Demo",
+      case_study_github_button: "GitHub",
+      case_study_gallery_alt_text_part: "screenshot",
       // --- New and updated keys ---
       contact_page_title: "Contact Me",
       contact_page_subtitle:

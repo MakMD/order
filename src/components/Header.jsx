@@ -49,7 +49,7 @@ const Header = () => {
           >
             <img
               src="/logo.svg"
-              alt="My-Dev Logo"
+              alt={t("logo_alt_text")}
               className={styles.logoImage}
             />
           </Link>

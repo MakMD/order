@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import styles from "./ContactForm.module.css";
 import { supabase } from "../lib/supabaseClient";
 import Button from "./UI/Button/Button";
@@ -13,10 +14,11 @@ const initialFormData = {
 };
 
 const ContactForm = () => {
+  const { t } = useTranslation();
   const [formData, setFormData] = useState(initialFormData);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formMessage, setFormMessage] = useState({ text: "", type: "" });
-  const [searchParams] = useSearchParams();
+  const [searchParams, setSearchParams] = useSearchParams();
 
   useEffect(() => {
     const serviceParam = searchParams.get("service");
@@ -34,7 +36,7 @@ const ContactForm = () => {
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.message) {
       setFormMessage({
-        text: "Будь ласка, заповніть усі обов'язкові поля.",
+        text: t("contact_form_validation_warning"),
         type: "warning",
       });
       return;
@@ -55,22 +57,26 @@ const ContactForm = () => {
 
     if (error) {
       setFormMessage({
-        text: `Сталася помилка: ${error.message}`,
+        text: t("contact_form_error_message", { error: error.message }),
         type: "error",
       });
     } else {
       setFormMessage({
-        text: "Дякуємо! Ваше повідомлення успішно надіслано.",
+        text: t("contact_form_success_message"),
         type: "success",
       });
       setFormData(initialFormData);
+      // Очищуємо query-параметр після успішної відправки
+      if (searchParams.get("service")) {
+        setSearchParams({});
+      }
     }
     setIsSubmitting(false);
   };
 
   return (
     <div className={styles.formContainer}>
-      <h2 className={styles.title}>Форма замовлення</h2>
+      <h2 className={styles.title}>{t("contact_form_title")}</h2>
 
       {formMessage.text && (
         <div className={`${styles.statusMessage} ${styles[formMessage.type]}`}>
@@ -82,7 +88,7 @@ const ContactForm = () => {
         <div className={styles.formGrid}>
           <div className={styles.formGroup}>
             <label htmlFor="name" className={styles.label}>
-              Ваше ім'я *
+              {t("contact_form_name_label")}
             </label>
             <input
               type="text"
@@ -97,7 +103,7 @@ const ContactForm = () => {
 
           <div className={styles.formGroup}>
             <label htmlFor="email" className={styles.label}>
-              Email *
+              {t("contact_form_email_label")}
             </label>
             <input
               type="email"
@@ -112,7 +118,7 @@ const ContactForm = () => {
 
           <div className={`${styles.formGroup} ${styles.fullWidth}`}>
             <label htmlFor="phone" className={styles.label}>
-              Телефон (необов'язково)
+              {t("contact_form_phone_label")}
             </label>
             <input
               type="tel"
@@ -126,7 +132,7 @@ const ContactForm = () => {
 
           <div className={`${styles.formGroup} ${styles.fullWidth}`}>
             <label htmlFor="service" className={styles.label}>
-              Послуга, що цікавить
+              {t("contact_form_service_label")}
             </label>
             <select
               id="service"
@@ -135,19 +141,25 @@ const ContactForm = () => {
               onChange={handleChange}
               className={styles.formControl}
             >
-              <option value="general">Загальне питання</option>
-              <option value="web-development">Розробка веб-сайтів</option>
-              <option value="modernization">
-                Модернізація та перехід на React
+              <option value="general">
+                {t("contact_form_service_general")}
               </option>
-              <option value="maintenance">Підтримка та обслуговування</option>
-              <option value="other">Інше</option>
+              <option value="web-development">
+                {t("contact_form_service_dev")}
+              </option>
+              <option value="modernization">
+                {t("contact_form_service_modernization")}
+              </option>
+              <option value="maintenance">
+                {t("contact_form_service_maintenance")}
+              </option>
+              <option value="other">{t("contact_form_service_other")}</option>
             </select>
           </div>
 
           <div className={`${styles.formGroup} ${styles.fullWidth}`}>
             <label htmlFor="message" className={styles.label}>
-              Ваше повідомлення *
+              {t("contact_form_message_label")}
             </label>
             <textarea
               id="message"
@@ -162,7 +174,9 @@ const ContactForm = () => {
 
           <div className={styles.submitButtonContainer}>
             <Button type="submit" variant="primary" disabled={isSubmitting}>
-              {isSubmitting ? "Надсилання..." : "Надіслати"}
+              {isSubmitting
+                ? t("contact_form_submitting_btn")
+                : t("contact_form_submit_btn")}
             </Button>
           </div>
         </div>

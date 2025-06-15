@@ -13,9 +13,12 @@ const CaseStudyDetailPage = () => {
 
   if (!caseStudy) {
     return (
-      <Section title="Кейс не знайдено" subtitle="Повернутися до списку кейсів">
+      <Section
+        title={t("case_study_not_found_title")}
+        subtitle={t("case_study_not_found_subtitle")}
+      >
         <Link to="/case-studies">
-          <Button>Усі кейси</Button>
+          <Button>{t("case_study_all_cases_button")}</Button>
         </Link>
       </Section>
     );
@@ -28,7 +31,6 @@ const CaseStudyDetailPage = () => {
     client,
     year,
     description,
-    mainImage,
     technologies,
     liveDemoUrl,
     githubRepoUrl,
@@ -103,7 +105,7 @@ const CaseStudyDetailPage = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Live Demo
+                    {t("case_study_live_demo_button")}
                   </Button>
                 )}
                 {githubRepoUrl && (
@@ -113,7 +115,7 @@ const CaseStudyDetailPage = () => {
                     rel="noopener noreferrer"
                     variant="secondary"
                   >
-                    GitHub
+                    {t("case_study_github_button")}
                   </Button>
                 )}
               </div>
@@ -131,7 +133,9 @@ const CaseStudyDetailPage = () => {
                 <img
                   key={index}
                   src={image}
-                  alt={`${title[lang] || title.uk} screenshot ${index + 1}`}
+                  alt={`${title[lang] || title.uk} ${t(
+                    "case_study_gallery_alt_text_part"
+                  )} ${index + 1}`}
                   className={styles.galleryImage}
                 />
               ))}

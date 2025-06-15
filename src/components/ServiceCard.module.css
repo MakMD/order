@@ -50,7 +50,7 @@
 .features {
   font-size: var(--font-size-sm);
   color: var(--color-text-body);
-  list-style-position: inside;
+  list-style-type: none; /* ВИДАЛЕНО СТАНДАРТНИЙ МАРКЕР */
   text-align: left;
   margin-bottom: var(--space-lg);
   padding-left: 0;

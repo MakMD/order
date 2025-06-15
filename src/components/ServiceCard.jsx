@@ -1,8 +1,11 @@
 import React from "react";
 import styles from "./ServiceCard.module.css";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next"; // Імпортуємо хук
 
 const ServiceCard = ({ icon: Icon, title, description, features, link }) => {
+  const { t } = useTranslation(); // Ініціалізуємо хук
+
   return (
     <div className={styles.card}>
       <div className={styles.icon}>
@@ -19,7 +22,7 @@ const ServiceCard = ({ icon: Icon, title, description, features, link }) => {
       )}
       {link && (
         <Link to={link} className={styles.link}>
-          Дізнатися більше
+          {t("service_card_learn_more")} {/* Використовуємо переклад */}
         </Link>
       )}
     </div>
