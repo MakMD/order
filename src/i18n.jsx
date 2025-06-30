@@ -18,7 +18,7 @@ const resources = {
       nav_services: "Послуги",
       nav_about: "Про мене",
       nav_contact: "Замовити",
-      footer_rights: "My-Dev. Всі права захищено.",
+      footer_rights: "Myro-Dev. Всі права захищено.",
       home_hero_title:
         "Перетворюю відвідувачів на клієнтів за допомогою швидких та надійних сайтів на React.",
       home_hero_subtitle:
@@ -115,12 +115,12 @@ const resources = {
       nav_case_studies: "Кейси",
       nav_about: "Про мене",
       nav_contact: "Замовити",
-      footer_rights: "My-Dev. Всі права захищено.",
+      footer_rights: "Myro-Dev. Всі права захищено.",
       // ... (багато інших ключів) ...
       service_card_learn_more: "Дізнатися більше",
 
       // --- НОВІ КЛЮЧІ ---
-      logo_alt_text: "Логотип My-Dev",
+      logo_alt_text: "Логотип Myro-Dev",
       theme_switcher_label: "Перемкнутись на {{theme}} тему",
       theme_switcher_light: "світлу",
       theme_switcher_dark: "темну",
@@ -174,7 +174,7 @@ const resources = {
       nav_services: "Services",
       nav_about: "About Me",
       nav_contact: "Order",
-      footer_rights: "My-Dev. All rights reserved.",
+      footer_rights: "Myro-Dev. All rights reserved.",
       home_hero_title:
         "I turn visitors into customers with fast and reliable React sites.",
       home_hero_subtitle:
@@ -268,12 +268,12 @@ const resources = {
       nav_case_studies: "Case Studies",
       nav_about: "About Me",
       nav_contact: "Order",
-      footer_rights: "My-Dev. All rights reserved.",
+      footer_rights: "Myro-Dev. All rights reserved.",
       // ... (many other keys) ...
       service_card_learn_more: "Learn more",
 
       // --- NEW KEYS ---
-      logo_alt_text: "My-Dev Logo",
+      logo_alt_text: "Myro-Dev Logo",
       theme_switcher_label: "Switch to {{theme}} mode",
       theme_switcher_light: "light",
       theme_switcher_dark: "dark",
