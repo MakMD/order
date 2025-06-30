@@ -144,3 +144,40 @@
     display: none; /* Hide mobile menu button */
   }
 }
+.navLink:hover {
+  background-color: var(--color-background-subtle);
+  color: var(--color-text-heading);
+}
+
+.navLink:focus-visible {
+  outline: 2px solid var(--color-primary-action);
+  outline-offset: 2px;
+}
+/* ... існуючі стилі ... */
+/* Media Query for Desktop */
+@media (min-width: var(--breakpoint-lg)) {
+  .desktopNav {
+    display: flex; /* Show desktop nav */
+    align-items: center;
+    gap: var(--space-md);
+  }
+  .mobileMenuButtonContainer {
+    display: none; /* Hide mobile menu button */
+  }
+}
+/* ... існуючі стилі ... */
+
+.logoLink {
+  flex-shrink: 0;
+  z-index: 1001; /* Ensure logo is above mobile menu overlay */
+  display: flex; /* Для кращого вирівнювання */
+}
+
+.logoImage {
+  height: 40px;
+  width: auto;
+  fill: var(--color-text-heading); /* Керуємо кольором через CSS */
+  transition: fill 0.3s ease;
+}
+
+/* ... (решта існуючих стилів) ... */

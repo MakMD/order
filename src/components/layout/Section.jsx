@@ -1,5 +1,7 @@
 import React from "react";
+import clsx from "clsx";
 import styles from "./Section.module.css";
+import { useScrollAnimation } from "../../hooks/useScrollAnimation";
 
 const Section = ({
   children,
@@ -8,12 +10,23 @@ const Section = ({
   variant = "default",
   id = "",
 }) => {
-  const sectionClasses = `${styles.section} ${
-    variant === "subtle" ? styles.subtle : ""
-  }`;
+  const [containerRef, isVisible] = useScrollAnimation({
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.1, // Анімація спрацює, коли 10% секції з'явиться на екрані
+  });
+
+  const sectionClasses = clsx(
+    styles.section,
+    "fade-in-section", // Початковий стан анімації
+    {
+      [styles.subtle]: variant === "subtle",
+      "is-visible": isVisible, // Клас, що запускає анімацію
+    }
+  );
 
   return (
-    <section id={id} className={sectionClasses}>
+    <section id={id} className={sectionClasses} ref={containerRef}>
       <div className={styles.container}>
         {(title || subtitle) && (
           <div className={styles.heading}>

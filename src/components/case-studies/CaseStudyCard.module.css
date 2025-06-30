@@ -66,3 +66,15 @@
   padding: var(--space-xxs) var(--space-sm);
   border-radius: var(--border-radius-sm);
 }
+/* ... існуючі стилі ... */
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-glow); /* Ефект світіння */
+  border-color: var(--color-primary-action);
+}
+
+.card:focus-visible {
+  outline: 2px solid var(--color-primary-action);
+  outline-offset: 2px;
+}
+/* ... існуючі стилі ... */

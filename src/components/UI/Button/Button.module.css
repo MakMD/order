@@ -50,3 +50,16 @@
   box-shadow: var(--shadow-md); /* Повернено до змінної */
   filter: brightness(1.1);
 }
+/* ... існуючі стилі ... */
+.button:hover {
+  text-decoration: none;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-glow); /* Ефект світіння */
+  filter: brightness(1.1);
+}
+
+.button:focus-visible {
+  outline: 2px solid var(--color-primary-action);
+  outline-offset: 2px;
+}
+/* ... існуючі стилі ... */

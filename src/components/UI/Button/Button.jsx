@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import clsx from "clsx"; // ВИПРАВЛЕННЯ: Додано імпорт
 import styles from "./Button.module.css";
 
 /**
@@ -15,7 +16,7 @@ import styles from "./Button.module.css";
  * @param {boolean} [disabled=false] - Стан disabled.
  */
 const Button = ({ children, variant = "primary", to, href, ...props }) => {
-  const commonClasses = `${styles.button} ${styles[variant] || styles.primary}`;
+  const commonClasses = clsx(styles.button, styles[variant]);
 
   if (to) {
     return (

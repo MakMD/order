@@ -1,7 +1,18 @@
-<svg width="160" height="40" viewBox="0 0 160 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="40" height="40" rx="8" fill="var(--color-primary-action, #007aff)"/>
-  <path d="M14 20L18 24L26 16" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-  <text x="52" y="27" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="20" font-weight="600" fill="var(--color-text-heading, #111)">
-    YourBrand
-  </text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 75" width="100" height="75">
+  <title>My-Dev Logo</title>
+  <style>
+    .logo-shape {
+      fill: #0D1117; /* Колір для світлої теми */
+    }
+    @media (prefers-color-scheme: dark) {
+      .logo-shape {
+        fill: #E6EDF3; /* Колір для темної теми */
+      }
+    }
+  </style>
+  <path class="logo-shape" d="
+    M0 75 V 0 H 20 L 40 40 V 75 H 20 V 30 L 0 75 Z
+    M30 0 L 50 40 L 70 0 H 90 L 60 60 L 50 40 L 40 60 L 10 0 H 30 Z
+    M60 40 L 80 0 H 100 V 75 H 80 V 30 L 60 75 V 40 Z
+  "/>
 </svg>

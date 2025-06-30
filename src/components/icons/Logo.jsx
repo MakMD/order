@@ -1,0 +1,21 @@
+import React from "react";
+
+const Logo = (props) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 100 75"
+    aria-labelledby="logo-title"
+    {...props}
+  >
+    <title id="logo-title">My-Dev Logo</title>
+    <path
+      d="
+    M0 75 V 0 H 20 L 40 40 V 75 H 20 V 30 L 0 75 Z
+    M30 0 L 50 40 L 70 0 H 90 L 60 60 L 50 40 L 40 60 L 10 0 H 30 Z
+    M60 40 L 80 0 H 100 V 75 H 80 V 30 L 60 75 V 40 Z
+  "
+    />
+  </svg>
+);
+
+export default Logo;

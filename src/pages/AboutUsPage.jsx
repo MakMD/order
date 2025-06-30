@@ -4,8 +4,6 @@ import { useTranslation } from "react-i18next";
 import styles from "./AboutUsPage.module.css";
 import Button from "../components/UI/Button/Button";
 import Section from "../components/layout/Section";
-
-// Import new Icon components
 import IconReact from "../components/icons/IconReact";
 import IconCloud from "../components/icons/IconCloud";
 import IconSync from "../components/icons/IconSync";
@@ -16,9 +14,18 @@ const AboutUsPage = () => {
   return (
     <div className={styles.pageWrapper}>
       <Section variant="subtle">
-        <div className={styles.heroContent}>
-          <h1 className={styles.mainTitle}>{t("about_hero_title")}</h1>
-          <p className={styles.mainSubtitle}>{t("about_hero_subtitle")}</p>
+        <div className={styles.heroGrid}>
+          <div className={styles.heroText}>
+            <h1 className={styles.mainTitle}>{t("about_hero_title")}</h1>
+            <p className={styles.mainSubtitle}>{t("about_hero_subtitle")}</p>
+          </div>
+          <div className={styles.heroImageWrapper}>
+            <img
+              src="/me.jpg"
+              alt={t("about_photo_alt")}
+              className={styles.heroImage}
+            />
+          </div>
         </div>
       </Section>
 

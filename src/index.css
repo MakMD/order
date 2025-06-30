@@ -101,7 +101,7 @@
 }
 html {
   font-size: 100%;
-  color-scheme: light dark; /* Informs browser about supported themes */
+  color-scheme: light dark;
 }
 body {
   font-family: var(--font-family-sans);
@@ -109,9 +109,14 @@ body {
   line-height: var(--line-height-body);
   color: var(--color-text-body);
   background-color: var(--color-background-main);
-  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth theme transition */
+  transition: background-color 0.3s ease, color 0.3s ease;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  /* Нові стилі для Flexbox-лейауту */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 h1,
 h2,
@@ -145,4 +150,14 @@ a {
 a:hover {
   text-decoration: underline;
   color: var(--color-primary-hover);
+}
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-section.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }

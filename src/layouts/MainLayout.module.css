@@ -1,6 +1,3 @@
 .mainContent {
-  /* Ensures that the main content takes up at least the full height of the viewport
-     minus the header and footer, preventing the footer from "floating" up on short pages.
-     The exact header height (e.g., 73px) might need adjustment if the header's padding changes. */
-  min-height: calc(100vh - 73px - 117px);
+  flex-grow: 1; /* Змушує main зайняти весь доступний простір */
 }

@@ -1,10 +1,12 @@
 import React, { useState, useRef, useEffect } from "react";
 import { NavLink, Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import clsx from "clsx"; // ВИПРАВЛЕННЯ: Додано імпорт
 import styles from "./Header.module.css";
 import Button from "./UI/Button/Button";
 import LanguageSwitcher from "./UI/LanguageSwitcher/LanguageSwitcher";
 import ThemeSwitcher from "./UI/ThemeSwitcher/ThemeSwitcher";
+import Logo from "./icons/Logo";
 
 const Header = () => {
   const { t } = useTranslation();
@@ -27,7 +29,9 @@ const Header = () => {
         mobileMenuRef.current?.querySelector("a, button");
       firstFocusableElement?.focus();
     } else {
-      mobileMenuButtonRef.current?.focus();
+      // This line was causing a bug on initial load, let's make it safer
+      // The button might not be in the DOM when the menu is not open initially
+      // mobileMenuButtonRef.current?.focus();
     }
   }, [isMobileMenuOpen]);
 
@@ -46,12 +50,9 @@ const Header = () => {
             to="/"
             className={styles.logoLink}
             onClick={isMobileMenuOpen ? closeMenu : undefined}
+            aria-label={t("logo_alt_text")}
           >
-            <img
-              src="/logo.svg"
-              alt={t("logo_alt_text")}
-              className={styles.logoImage}
-            />
+            <Logo className={styles.logoImage} />
           </Link>
 
           {/* Desktop Navigation */}
@@ -61,7 +62,7 @@ const Header = () => {
                 key={link.to}
                 to={link.to}
                 className={({ isActive }) =>
-                  `${styles.navLink} ${isActive ? styles.active : ""}`
+                  clsx(styles.navLink, { [styles.active]: isActive })
                 }
               >
                 {link.text}
@@ -108,7 +109,7 @@ const Header = () => {
                 to={link.to}
                 onClick={closeMenu}
                 className={({ isActive }) =>
-                  `${styles.mobileNavLink} ${isActive ? styles.active : ""}`
+                  clsx(styles.mobileNavLink, { [styles.active]: isActive })
                 }
               >
                 {link.text}

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { useMutation } from "@tanstack/react-query";
 import styles from "./ContactForm.module.css";
 import { supabase } from "../lib/supabaseClient";
 import Button from "./UI/Button/Button";
@@ -13,12 +14,40 @@ const initialFormData = {
   message: "",
 };
 
+// Асинхронна функція для відправки даних до Supabase
+async function submitContactRequest(formData) {
+  const { data, error } = await supabase.from("contact_requests").insert([
+    {
+      name: formData.name,
+      email: formData.email,
+      phone: formData.phone || null,
+      service: formData.service,
+      message: formData.message,
+    },
+  ]);
+
+  if (error) {
+    throw new Error(error.message);
+  }
+
+  return data;
+}
+
 const ContactForm = () => {
   const { t } = useTranslation();
   const [formData, setFormData] = useState(initialFormData);
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [formMessage, setFormMessage] = useState({ text: "", type: "" });
+  const [validationMessage, setValidationMessage] = useState("");
   const [searchParams, setSearchParams] = useSearchParams();
+
+  const { mutate, isPending, isSuccess, isError, error } = useMutation({
+    mutationFn: submitContactRequest,
+    onSuccess: () => {
+      setFormData(initialFormData);
+      if (searchParams.get("service")) {
+        setSearchParams({});
+      }
+    },
+  });
 
   useEffect(() => {
     const serviceParam = searchParams.get("service");
@@ -32,55 +61,33 @@ const ContactForm = () => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
+    setValidationMessage("");
     if (!formData.name || !formData.email || !formData.message) {
-      setFormMessage({
-        text: t("contact_form_validation_warning"),
-        type: "warning",
-      });
+      setValidationMessage(t("contact_form_validation_warning"));
       return;
     }
-
-    setIsSubmitting(true);
-    setFormMessage({ text: "", type: "" });
-
-    const { error } = await supabase.from("contact_requests").insert([
-      {
-        name: formData.name,
-        email: formData.email,
-        phone: formData.phone || null,
-        service: formData.service,
-        message: formData.message,
-      },
-    ]);
-
-    if (error) {
-      setFormMessage({
-        text: t("contact_form_error_message", { error: error.message }),
-        type: "error",
-      });
-    } else {
-      setFormMessage({
-        text: t("contact_form_success_message"),
-        type: "success",
-      });
-      setFormData(initialFormData);
-      // Очищуємо query-параметр після успішної відправки
-      if (searchParams.get("service")) {
-        setSearchParams({});
-      }
-    }
-    setIsSubmitting(false);
+    mutate(formData);
   };
 
   return (
     <div className={styles.formContainer}>
       <h2 className={styles.title}>{t("contact_form_title")}</h2>
 
-      {formMessage.text && (
-        <div className={`${styles.statusMessage} ${styles[formMessage.type]}`}>
-          {formMessage.text}
+      {validationMessage && (
+        <div className={`${styles.statusMessage} ${styles.warning}`}>
+          {validationMessage}
+        </div>
+      )}
+      {isSuccess && (
+        <div className={`${styles.statusMessage} ${styles.success}`}>
+          {t("contact_form_success_message")}
+        </div>
+      )}
+      {isError && (
+        <div className={`${styles.statusMessage} ${styles.error}`}>
+          {t("contact_form_error_message", { error: error.message })}
         </div>
       )}
 
@@ -173,8 +180,8 @@ const ContactForm = () => {
           </div>
 
           <div className={styles.submitButtonContainer}>
-            <Button type="submit" variant="primary" disabled={isSubmitting}>
-              {isSubmitting
+            <Button type="submit" variant="primary" disabled={isPending}>
+              {isPending
                 ? t("contact_form_submitting_btn")
                 : t("contact_form_submit_btn")}
             </Button>

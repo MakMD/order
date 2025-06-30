@@ -46,6 +46,7 @@ const resources = {
       home_key_service_2_desc:
         "Перенос існуючих сайтів на сучасний стек для підвищення швидкості та безпеки.",
       home_key_service_3_title: "Технічна підтримка",
+      about_photo_alt: "Фотографія розробника",
       home_key_service_3_desc:
         "Забезпечення стабільної роботи та поступовий розвиток вашого сайту після запуску.",
       home_view_all_services: "Дізнатися більше про послуги",
@@ -84,7 +85,7 @@ const resources = {
       services_cta_button: "Обговорити проєкт",
       about_hero_title: "Ваш надійний веб-розробник",
       about_hero_subtitle:
-        "Привіт, я М. Я допомагаю бізнесам отримувати технологічну перевагу через професійну веб-розробку. Мій підхід — це прозорість, якість коду та фокус на ваших бізнес-цілях.",
+        "Привіт, я Мирослав. Я допомагаю бізнесам отримувати технологічну перевагу через професійну веб-розробку. Мій підхід — це прозорість, якість коду та фокус на ваших бізнес-цілях.",
       about_philosophy_title: "Моя філософія",
       about_philosophy_1_title: "Прозорість",
       about_philosophy_1_desc:
@@ -238,7 +239,7 @@ const resources = {
       services_cta_button: "Discuss a project",
       about_hero_title: "Your Reliable Web Developer",
       about_hero_subtitle:
-        "Hello, I'm M. I help businesses gain a technological advantage through professional web development. My approach is transparency, code quality, and a focus on your business goals.",
+        "Hello, I'm Myroslav. I help businesses gain a technological advantage through professional web development. My approach is transparency, code quality, and a focus on your business goals.",
       about_philosophy_title: "My Philosophy",
       about_philosophy_1_title: "Transparency",
       about_philosophy_1_desc:
@@ -305,6 +306,7 @@ const resources = {
       contact_form_submit_btn: "Send",
       contact_form_submitting_btn: "Sending...",
       contact_form_validation_warning: "Please fill in all required fields.",
+      about_photo_alt: "Photo of the developer",
       contact_form_success_message:
         "Thank you! Your message has been sent successfully.",
       contact_form_error_message: "An error occurred: {{error}}",
